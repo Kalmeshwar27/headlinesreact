@@ -328,11 +328,16 @@ body.dark-mode {
 }
 
 .instructions h2 {
-  margin-bottom: 15px;
-  font-size: 1.5em;
-  text-align: center;
+  animation: glowHeading 2s ease-in-out infinite alternate;
 }
-
+/* @keyframes glowHeading {
+  from {
+    text-shadow: 0 0 5px #00aaff;
+  }
+  to {
+    text-shadow: 0 0 15px #00aaff, 0 0 30px #0077ff;
+  }
+} */
 .instructions ul {
   list-style: none;
   padding: 0;
@@ -345,14 +350,30 @@ body.dark-mode {
   animation-delay: calc(var(--i) * 0.2s);
   margin-bottom: 10px;
   font-size: 1.1em;
+  --i: 1;
+  animation-delay: calc(var(--i) * 0.3s);
 }
-
+.instructions li:hover {
+  background-color: #e7f3ff;
+  border-radius: 8px;
+  padding: 5px;
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
 @keyframes fadeInItem {
-  to {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95) rotateX(90deg);
+  }
+  60% {
+    transform: translateY(-5px) scale(1.02) rotateX(10deg);
+  }
+  100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1) rotateX(0);
   }
 }
+
 
 @keyframes fadeInBox {
   from {
@@ -366,7 +387,7 @@ body.dark-mode {
 }
 .game-over-screen {
   animation: fadeScaleIn 0.8s ease forwards;
-  background-color: #f8f9fa;
+  background-color: #fbfdff;
   padding: 40px;
   border-radius: 20px;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
@@ -563,3 +584,137 @@ button#dark-mode-btn:hover {
     transform: translateY(0);
   }
 }
+.correct {
+  font-weight: bold;
+  color: green;
+}
+.timer-container {
+  margin-top: 10px;
+  width: 100%;
+  background: #eee;
+  height: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.timer-bar {
+  height: 100%;
+  background-color: #4caf50;
+  transition: width 1s linear;
+}
+@keyframes sparkle {
+  0%, 100% {
+    box-shadow: 0 0 5px #ff6b6b, 0 0 10px #ffa502, 0 0 15px #70a1ff;
+  }
+  50% {
+    box-shadow: 0 0 15px #ff4757, 0 0 25px #fffa65, 0 0 30px #1e90ff;
+  }
+}
+.game-over-screen.glow {
+  animation: fadeScaleIn 0.8s ease forwards, sparkle 2s infinite ease-in-out;
+  background: linear-gradient(135deg, #ffffff, #fceabb);
+  border: 2px solid #ff6b6b;
+  box-shadow: 0 0 20px rgba(255, 107, 107, 0.6);
+}
+
+/* Fancy text animation */
+.game-over-text {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #e74c3c;
+  background: linear-gradient(90deg, #ff6b6b, #ffa502, #1e90ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: bounceText 1s ease-in-out, shimmer 3s infinite linear;
+}
+
+/* Shimmer effect for gradient text */
+@keyframes shimmer {
+  0% {
+    background-position: -100%;
+  }
+  100% {
+    background-position: 200%;
+  }
+}
+/* Confetti or Sparkle Effect Simulation */
+@keyframes sparkle {
+  0%, 100% {
+    box-shadow: 0 0 5px #ff6b6b, 0 0 10px #ffa502, 0 0 15px #70a1ff;
+  }
+  50% {
+    box-shadow: 0 0 15px #ff4757, 0 0 25px #fffa65, 0 0 30px #1e90ff;
+  }
+}
+
+/* Apply glow effect */
+.game-over-screen.glow {
+  animation: fadeScaleIn 0.8s ease forwards, sparkle 2s infinite ease-in-out;
+  background: linear-gradient(135deg, #ffffff, #fceabb);
+  border: 2px solid #ff6b6b;
+  box-shadow: 0 0 20px rgba(255, 107, 107, 0.6);
+}
+
+/* Fancy text animation */
+.game-over-text {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #e74c3c;
+  background: linear-gradient(90deg, #ff6b6b, #ffa502, #1e90ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: bounceText 1s ease-in-out, shimmer 3s infinite linear;
+}
+
+/* Shimmer effect for gradient text */
+@keyframes shimmer {
+  0% {
+    background-position: -100%;
+  }
+  100% {
+    background-position: 200%;
+  }
+}
+
+/* Score animation improvement */
+.final-score {
+  font-size: 1.8em;
+  animation: pulseText 1s infinite alternate;
+  color: #2c3e50;
+}
+
+@keyframes pulseText {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.05);
+    text-shadow: 0 0 10px #2ecc71;
+  }
+}
+
+/* Button entrance animation */
+.restart-btn {
+  padding: 12px 25px;
+  font-size: 18px;
+  border-radius: 8px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  cursor: pointer;
+  animation: fadeSlideUp 1s ease forwards;
+  opacity: 0;
+  transform: translateY(30px);
+  animation-delay: 1.5s;
+}
+
+@keyframes fadeSlideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+

@@ -161,7 +161,7 @@ function App() {
       <div className="start-screen">
         <h1>The Headlines Game</h1>
         <div className="instructions">
-          <h2>📘 How to Play</h2>
+          <h2> How to Play</h2>
           <ul>
             <li style={{ '--i': 1 }}>🔊 Read or listen to the news headline with a missing word.</li>
             <li style={{ '--i': 2 }}>🤔 Choose the correct word from the given options.</li>
