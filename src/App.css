@@ -3,17 +3,27 @@ body {
   font-family: 'Georgia', serif;
   margin: 0;
   background-color: #f7f7f7;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-/* Container */
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
 .container {
   max-width: 900px;
   margin: auto;
   padding: 40px;
-  background-color: rgb(222, 212, 139);
+  background-color: rgb(244, 244, 236);
   border: 1px solid #ccc;
 }
 
+.container.dark-mode {
+  background-color: #333;
+  color: #fff;
+}
 /* Loading and Start Screens */
 .loading-screen {
   display: flex;
@@ -176,7 +186,7 @@ body {
 /* Options */
 .options {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 15px;
   margin-top: 20px;
 }
@@ -198,26 +208,20 @@ body {
   border-color: #888;
 }
 
-.option-btn.selected {
-  background-color: #d0eaff;
-  border-color: #007bff;
-  color: #0056b3;
-  font-weight: 600;
-}
-
 .option-btn.correct {
-  background-color: #d4edda;
-  border-color: #28a745;
-  color: #155724;
-  font-weight: 600;
+  background-color: #4CAF50; /* green */
+  color: white;
 }
 
 .option-btn.wrong {
-  background-color: #f8d7da;
-  border-color: #dc3545;
-  color: #721c24;
-  font-weight: 600;
+  background-color: #f44336; /* red */
+  color: white;
 }
+
+.option-btn.selected {
+  border: 2px solid #2196F3; /* blue border for selected before submission */
+}
+
 
 
 /* Submit Button */
@@ -297,3 +301,265 @@ body {
   }
 }
 
+.speak-btn {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #0077ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+.speak-btn:hover {
+  background-color: #005ccc;
+}
+.instructions {
+  background-color: #f1f1f1;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 20px auto;
+  animation: fadeInBox 1s ease-in-out;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  max-width: 600px;
+  text-align: left;
+}
+
+.instructions h2 {
+  margin-bottom: 15px;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.instructions ul {
+  list-style: none;
+  padding: 0;
+}
+
+.instructions li {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInItem 0.6s ease forwards;
+  animation-delay: calc(var(--i) * 0.2s);
+  margin-bottom: 10px;
+  font-size: 1.1em;
+}
+
+@keyframes fadeInItem {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInBox {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.game-over-screen {
+  animation: fadeScaleIn 0.8s ease forwards;
+  background-color: #f8f9fa;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  margin: 100px auto;
+  text-align: center;
+  transform: scale(0.9);
+  opacity: 0;
+}
+
+@keyframes fadeScaleIn {
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.game-over-text {
+  font-size: 2.5em;
+  animation: bounceText 1s ease-in-out;
+  margin-bottom: 20px;
+}
+
+@keyframes bounceText {
+  0% { transform: scale(0.8); opacity: 0; }
+  50% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+.final-score {
+  font-size: 1.8em;
+  color: #333;
+  animation: scoreCount 1s ease-in-out;
+  margin-bottom: 30px;
+}
+
+@keyframes scoreCount {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Common styles */
+.container {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Dark Mode */
+.dark-mode {
+  background-color: #333;
+  color: white;
+}
+
+.dark-mode .headline-box {
+  background-color: #444;
+  color: white;
+}
+
+.dark-mode .option-btn {
+  background-color: #555;
+  color: white;
+}
+
+.dark-mode .option-btn:hover {
+  background-color: #666;
+}
+
+.dark-mode .selected {
+  background-color: #00b300;
+}
+
+.dark-mode .correct {
+  background-color: #4CAF50;
+}
+
+.dark-mode .wrong {
+  background-color: #f44336;
+}
+
+.dark-mode .submit-btn {
+  background-color: #00b300;
+}
+
+/* Light Mode */
+.container:not(.dark-mode) {
+  background-color: #fff;
+  color: #333;
+}
+
+.container:not(.dark-mode) .headline-box {
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.container:not(.dark-mode) .option-btn {
+  background-color: #f1f1f1;
+  color: #333;
+}
+
+.container:not(.dark-mode) .option-btn:hover {
+  background-color: #ddd;
+}
+
+.container:not(.dark-mode) .selected {
+  background-color: #00b300;
+}
+
+.container:not(.dark-mode) .correct {
+  background-color: #4CAF50;
+}
+
+.container:not(.dark-mode) .wrong {
+  background-color: #f44336;
+}
+
+.container:not(.dark-mode) .submit-btn {
+  background-color: #4CAF50;
+}
+
+/* Specific styles for the options */
+.option-btn {
+  padding: 10px;
+  margin: 5px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.option-btn:hover {
+  background-color: #eee;
+}
+
+.selected {
+  background-color: #00b300;
+}
+
+.correct {
+  background-color: #4CAF50;
+}
+
+.wrong {
+  background-color: #f44336;
+}
+
+/* Styling for the button to switch dark mode */
+button#dark-mode-btn {
+  margin-top: 20px;
+  background-color: #007bff;
+}
+
+button#dark-mode-btn:hover {
+  background-color: #0056b3;
+}
+.correct {
+  display: inline-block;
+  opacity: 0;
+  animation: fillIn 1s forwards;
+}
+
+@keyframes fillIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
