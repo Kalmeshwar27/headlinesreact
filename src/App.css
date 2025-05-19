@@ -396,3 +396,86 @@ font-size: 16px;
   transition: color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* ========== ENHANCED RESPONSIVE FOR TABLETS & PHONES ========== */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px 15px;
+    margin: 0 10px;
+    background-size: cover;
+  }
+  .headline-title {
+    font-size: 26px;
+  }
+  .headline-text {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  .news-image {
+    width: 100%;
+    height: auto;
+  }
+  .content {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .nav-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .nav-buttons button {
+    width: 100%;
+  }
+  .option-btn {
+    font-size: 16px;
+    padding: 12px;
+  }
+  .submit-btn {
+    width: 100%;
+    font-size: 16px;
+    padding: 12px;
+  }
+  .game-over-text {
+    font-size: 2em;
+  }
+  .final-score {
+    font-size: 1.5em;
+  }
+  .score-box {
+    padding: 15px 20px;
+  }
+  .timer {
+    font-size: 16px;
+  }
+}
+
+/* ========== ENHANCED RESPONSIVE FOR SMALL PHONES ========== */
+@media (max-width: 480px) {
+  .headline-title {
+    font-size: 22px;
+  }
+  .headline-text {
+    font-size: 14px;
+  }
+  .button-85 {
+    font-size: 0.95rem;
+    padding: 0.6em 1.5em;
+  }
+  .option-btn {
+    font-size: 15px;
+    padding: 10px;
+  }
+  .submit-btn {
+    font-size: 15px;
+    padding: 10px;
+  }
+  .page-indicator {
+    width: 90px;
+    height: 24px;
+  }
+  .score-box h2 {
+    font-size: 1.2em;
+  }
+  .start-screen, .game-over-screen {
+    padding: 20px;
+  }
+}
