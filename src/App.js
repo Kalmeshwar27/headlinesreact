@@ -5,12 +5,12 @@ import berkshireImage from "./assets/images/berkshire.jpg";
 import startSound from "./assets/sounds/start.mp3";
 import correctSound from "./assets/sounds/correct.mp3";
 import wrongSound from "./assets/sounds/wrong.mp3";
-import gameOverSound from "./assets/sounds/game-over-sound.mp3";
+import gameOverSound from "./assets/sounds/game-over-sound.mp3"; // Game over sound
 
 const startAudio = new Audio(startSound);
 const correctAudio = new Audio(correctSound);
 const wrongAudio = new Audio(wrongSound);
-const gameOverAudio = new Audio(gameOverSound);
+const gameOverAudio = new Audio(gameOverSound); // Create the game over audio instance
 
 const questionsData = [
   {
@@ -45,6 +45,7 @@ function App() {
   const [score, setScore] = useState(0);
   const [timeLeft, setTimeLeft] = useState(20);
   const [gameOver, setGameOver] = useState(false);
+  const [darkMode, setDarkMode] = useState(false); // State for dark mode
 
   const current = questions[currentQ];
 
@@ -98,7 +99,7 @@ function App() {
       resetState();
     } else {
       setGameOver(true);
-      gameOverAudio.play();
+      gameOverAudio.play(); // Play game over sound when game finishes
     }
   };
 
@@ -116,9 +117,10 @@ function App() {
   };
 
   const filledSentence = current.sentence.replace(
-    /<span id="blank">.*?<\/span>/,
-    `<span id="blank" class="correct">${current.correctAnswer}</span>`
-  );
+  /<span id="blank">.*?<\/span>/,
+  `<span id="blank" class="correct">${current.correctAnswer}</span>`
+);
+
 
   const speakHeadline = () => {
     let sentenceText;
@@ -135,14 +137,19 @@ function App() {
   };
 
   const handleRestart = () => {
-    setQuestions(questionsData);
+    // Reset the game state
+    setQuestions(questionsData);  // Reset questions to initial state
     setScore(0);
     setGameOver(false);
-    setCurrentQ(0);
-    setStarted(false);
-    setSubmitted(false);
-    setSelected("");
-    setTimeLeft(20);
+    setCurrentQ(0);  // Start from the first question
+    setStarted(false);  // Reset the game start flag
+    setSubmitted(false);  // Clear submission
+    setSelected("");  // Clear selected answer
+    setTimeLeft(20);  // Reset time
+  };
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
   };
 
   if (loading) {
@@ -180,7 +187,7 @@ function App() {
   }
 
   return (
-    <div className="container">
+    <div className={`container ${darkMode ? "dark-mode" : ""}`}>
       <h1 className="headline-title">The Headlines</h1>
       <div className="headline-header">
         <div>Business</div>
@@ -199,31 +206,32 @@ function App() {
           <button className="speak-btn" onClick={speakHeadline}>🔊 Speak Headline</button>
 
           <div className="options">
-            {current.options.map((opt) => {
-              const isCorrect = opt === current.correctAnswer;
-              const isWrong = opt === selected && opt !== current.correctAnswer;
-              const isSelected = opt === selected;
+           {current.options.map((opt) => {
+  const isCorrect = opt === current.correctAnswer;
+  const isWrong = opt === selected && opt !== current.correctAnswer;
+  const isSelected = opt === selected;
 
-              let className = "option-btn";
+  let className = "option-btn";
 
-              if (submitted || current.attempted) {
-                if (isCorrect) className += " correct";
-                else if (isWrong) className += " wrong";
-              } else if (isSelected) {
-                className += " selected";
-              }
+  if (submitted || current.attempted) {
+    if (isCorrect) className += " correct"; // Always highlight correct answer
+    else if (isWrong) className += " wrong"; // Highlight wrong selected answer
+  } else if (isSelected) {
+    className += " selected"; // Show selected option before submit
+  }
 
-              return (
-                <button
-                  key={opt}
-                  className={className}
-                  onClick={() => setSelected(opt)}
-                  disabled={submitted || current.attempted}
-                >
-                  {opt}
-                </button>
-              );
-            })}
+  return (
+    <button
+      key={opt}
+      className={className}
+      onClick={() => setSelected(opt)}
+      disabled={submitted || current.attempted}
+    >
+      {opt}
+    </button>
+  );
+})}
+
           </div>
 
           {!submitted && !current.attempted && (
@@ -245,6 +253,10 @@ function App() {
           </div>
         </div>
       </div>
+
+      {/* <button id="dark-mode-btn" onClick={toggleDarkMode}>
+        {darkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+      </button> */}
     </div>
   );
 }

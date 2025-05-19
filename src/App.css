@@ -1,3 +1,4 @@
+
 /* ========== GOOGLE FONTS ========== */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Playfair+Display:wght@700&family=Merriweather&display=swap');
 
@@ -487,4 +488,113 @@ font-size: 16px;
 /* ========== GLOBAL TRANSITIONS ========== */
 * {
   transition: color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+/* ========== RESPONSIVE (MOBILE) DESIGN ========== */
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .container {
+    padding: 20px;
+    margin: 10px;
+    background-size: cover;
+  }
+
+  .headline-title {
+    font-size: 24px;
+    letter-spacing: 0.05em;
+  }
+
+  .headline-text {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .news-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .options {
+    grid-template-columns: 1fr;
+  }
+
+  .option-btn {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  .nav-buttons {
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+  }
+
+  .nav-buttons button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .button-85 {
+    font-size: 0.9rem;
+    padding: 0.5em 1.5em;
+  }
+
+  .submit-btn {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  .info-bar {
+    font-size: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .headline-header {
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 15px;
+  }
+
+  .headline-title {
+    font-size: 20px;
+  }
+
+  .headline-text {
+    font-size: 14px;
+  }
+
+  .option-btn {
+    font-size: 14px;
+  }
+
+  .submit-btn {
+    font-size: 13px;
+  }
+
+  .button-85 {
+    font-size: 0.85rem;
+    padding: 0.4em 1.2em;
+  }
+
+  .page-indicator {
+    width: 90px;
+    height: 24px;
+  }
 }
