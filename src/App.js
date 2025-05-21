@@ -5,31 +5,35 @@ import berkshireImage from "./assets/images/berkshire.jpg";
 import startSound from "./assets/sounds/start.mp3";
 import correctSound from "./assets/sounds/correct.mp3";
 import wrongSound from "./assets/sounds/wrong.mp3";
-import gameOverSound from "./assets/sounds/game-over-sound.mp3"; // Game over sound
+import gameOverSound from "./assets/sounds/game-over-sound.mp3";
 
 const startAudio = new Audio(startSound);
 const correctAudio = new Audio(correctSound);
 const wrongAudio = new Audio(wrongSound);
-const gameOverAudio = new Audio(gameOverSound); // Create the game over audio instance
+const gameOverAudio = new Audio(gameOverSound);
 
 const questionsData = [
   {
     image: trumpImage,
-    sentence: 'Donald Trump said he would be "very <span id="blank">__</span>" in negotiations with China.',
+    sentence:
+      'Donald Trump said he would be "very <span id="blank">__</span>" in negotiations with China.',
     correctAnswer: "tough",
     options: ["friendly", "tough", "soft", "diplomatic"],
     info: "Donald Trump stated he plans to approach trade negotiations with China in a more cooperative manner. He emphasized being very nice during future talks to ease tensions.",
-    readMore: "https://www.cnbctv18.com/world/trump-says-he-will-be-very-nice-to-china-in-trade-talks-ws-l-19592769.htm",
+    readMore:
+      "https://www.cnbctv18.com/world/trump-says-he-will-be-very-nice-to-china-in-trade-talks-ws-l-19592769.htm",
     attempted: false,
     correct: false,
   },
   {
     image: berkshireImage,
-    sentence: 'Warren Buffett announced he will step down as CEO of <span id="blank">__</span> by year-end.',
+    sentence:
+      'Warren Buffett announced he will step down as CEO of <span id="blank">__</span> by year-end.',
     correctAnswer: "Berkshire Hathaway",
     options: ["Berkshire Hathaway", "Apple", "Amazon", "Tesla"],
     info: "Warren Buffett announced that he would step down from Berkshire Hathaway, the company he led for decades.",
-    readMore: "https://www.news9live.com/business/markets/stock-market-on-march-4-2025-sensex-nifty-updates-2830179",
+    readMore:
+      "https://www.news9live.com/business/markets/stock-market-on-march-4-2025-sensex-nifty-updates-2830179",
     attempted: false,
     correct: false,
   },
@@ -45,7 +49,7 @@ function App() {
   const [score, setScore] = useState(0);
   const [timeLeft, setTimeLeft] = useState(20);
   const [gameOver, setGameOver] = useState(false);
-  const [darkMode, setDarkMode] = useState(false); // State for dark mode
+  const [darkMode, setDarkMode] = useState(false);
 
   const current = questions[currentQ];
 
@@ -62,7 +66,7 @@ function App() {
     }
     const timer = setTimeout(() => setTimeLeft(timeLeft - 1), 1000);
     return () => clearTimeout(timer);
-  }, [timeLeft, submitted, gameOver, started]);
+  }, [timeLeft, submitted, gameOver, started, current.attempted]);
 
   const handleStart = () => {
     startAudio.play();
@@ -81,7 +85,7 @@ function App() {
 
       if (isCorrect) {
         correctAudio.play();
-        setScore(score + 1);
+        setScore((score) => score + 1);
       } else {
         wrongAudio.play();
       }
@@ -99,7 +103,7 @@ function App() {
       resetState();
     } else {
       setGameOver(true);
-      gameOverAudio.play(); // Play game over sound when game finishes
+      gameOverAudio.play();
     }
   };
 
@@ -117,16 +121,17 @@ function App() {
   };
 
   const filledSentence = current.sentence.replace(
-  /<span id="blank">.*?<\/span>/,
-  `<span id="blank" class="correct">${current.correctAnswer}</span>`
-);
-
+    /<span id="blank">.*?<\/span>/,
+    `<span id="blank" class="correct">${current.correctAnswer}</span>`
+  );
 
   const speakHeadline = () => {
     let sentenceText;
 
     if (submitted || current.attempted) {
-      sentenceText = current.sentence.replace(/<[^>]+>/g, "").replace("_____", current.correctAnswer);
+      sentenceText = current.sentence
+        .replace(/<[^>]+>/g, "")
+        .replace("_____", current.correctAnswer);
     } else {
       sentenceText = current.sentence.replace(/<[^>]+>/g, "").replace("_____", "blank");
     }
@@ -137,126 +142,169 @@ function App() {
   };
 
   const handleRestart = () => {
-    // Reset the game state
-    setQuestions(questionsData);  // Reset questions to initial state
+    setQuestions(questionsData);
     setScore(0);
     setGameOver(false);
-    setCurrentQ(0);  // Start from the first question
-    setStarted(false);  // Reset the game start flag
-    setSubmitted(false);  // Clear submission
-    setSelected("");  // Clear selected answer
-    setTimeLeft(20);  // Reset time
+    setCurrentQ(0);
+    setStarted(false);
+    setSubmitted(false);
+    setSelected("");
+    setTimeLeft(20);
   };
 
   const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
+    setDarkMode((prev) => !prev);
   };
 
   if (loading) {
-    return <div className="loading-screen"><h1>Loading...</h1></div>;
+    return (
+      <div className="loading-screen">
+        <div className="loader"></div>
+        <h1>Loading...</h1>
+      </div>
+    );
   }
 
   if (!started) {
     return (
-      <div className="start-screen">
+      <div className={`start-screen ${darkMode ? "dark-mode" : ""}`}>
         <h1>The Headlines Game</h1>
         <div className="instructions">
-          <h2> How to Play</h2>
+          <h2>How to Play</h2>
           <ul>
-            <li style={{ '--i': 1 }}>🔊 Read or listen to the news headline with a missing word.</li>
-            <li style={{ '--i': 2 }}>🤔 Choose the correct word from the given options.</li>
-            <li style={{ '--i': 3 }}>⏳ You have 20 seconds to answer each question.</li>
-            <li style={{ '--i': 4 }}>✅ Immediate feedback is provided after each submission.</li>
-            <li style={{ '--i': 5 }}>🏁 At the end, view your score and try again if you like!</li>
+            <li>🔊 Listen to the headline.</li>
+            <li>🤔 Choose the correct word to complete it.</li>
+            <li>⏳ You have 20 seconds per question.</li>
+            <li>✅ Get instant feedback.</li>
+            <li>🏁 See your score at the end.</li>
           </ul>
         </div>
         <p>Test your knowledge with breaking news headlines!</p>
-        <button className="button-85" onClick={handleStart}>▶️ Start Game</button>
+        <button className="button-85" onClick={handleStart}>
+          ▶️ Start Game
+        </button>
+        {/* <button
+          className="dark-mode-toggle"
+          onClick={toggleDarkMode}
+        >
+          {darkMode ? "🌞 Light Mode" : "🌙 Dark Mode"}
+        </button> */}
       </div>
     );
   }
 
   if (gameOver) {
     return (
-      <div className="game-over-screen">
+      <div className={`game-over-screen ${darkMode ? "dark-mode" : ""}`}>
         <h2 className="game-over-text">🎉 Game Over 🎉</h2>
-        <p className="final-score">You scored: {score} / {questions.length}</p>
-        <button className="button-85" onClick={handleRestart}>🔁 Restart Game</button>
+        <p className="final-score">
+          You scored: {score} / {questions.length}
+        </p>
+        <button className="button-85" onClick={handleRestart}>
+          🔁 Restart Game
+        </button>
+        {/* <button
+          className="dark-mode-toggle"
+          onClick={toggleDarkMode}
+        >
+          {darkMode ? "🌞 Light Mode" : "🌙 Dark Mode"}
+        </button> */}
       </div>
     );
   }
 
   return (
     <div className={`container ${darkMode ? "dark-mode" : ""}`}>
-      <h1 className="headline-title">The Headlines</h1>
-      <div className="headline-header">
-        <div>Business</div>
-        <div>May 2025</div>
-      </div>
+      <div className="content-box">
+        <h1 className="headline-title">The Headlines</h1>
+        <div className="headline-header">
+          <div>Business</div>
+          <div>May 2025</div>
+        </div>
 
-      <div className="info-bar">
-        <span>Score: {score}</span>
-        <span>Time Left: {timeLeft}s</span>
-      </div>
+        <div className="info-bar">
+          <span>Score: {score}</span>
+          <span>Time Left: {timeLeft}s</span>
+          <button
+            className="dark-mode-toggle"
+            onClick={toggleDarkMode}
+          >
+            {darkMode ? "🌞 Light Mode" : "🌙 Dark Mode"}
+          </button>
+        </div>
 
-      <div className="content">
-        <img src={current.image} alt="News" className="news-image" />
-        <div className="headline-box">
-          <p className="headline-text" dangerouslySetInnerHTML={{ __html: submitted || current.attempted ? filledSentence : current.sentence }} />
-          <button className="speak-btn" onClick={speakHeadline}>🔊 Speak Headline</button>
-
-          <div className="options">
-           {current.options.map((opt) => {
-  const isCorrect = opt === current.correctAnswer;
-  const isWrong = opt === selected && opt !== current.correctAnswer;
-  const isSelected = opt === selected;
-
-  let className = "option-btn";
-
-  if (submitted || current.attempted) {
-    if (isCorrect) className += " correct"; // Always highlight correct answer
-    else if (isWrong) className += " wrong"; // Highlight wrong selected answer
-  } else if (isSelected) {
-    className += " selected"; // Show selected option before submit
-  }
-
-  return (
-    <button
-      key={opt}
-      className={className}
-      onClick={() => setSelected(opt)}
-      disabled={submitted || current.attempted}
-    >
-      {opt}
-    </button>
-  );
-})}
-
-          </div>
-
-          {!submitted && !current.attempted && (
-            <button className="submit-btn" onClick={() => handleSubmit(false)} disabled={!selected}>
-              Submit
+        <div className="content">
+          <img src={current.image} alt="News" className="news-image" />
+          <div className="headline-box">
+            <p
+              className="headline-text"
+              dangerouslySetInnerHTML={{
+                __html: submitted || current.attempted ? filledSentence : current.sentence,
+              }}
+            />
+            <button className="speak-btn" onClick={speakHeadline}>
+              🔊 Speak Headline
             </button>
-          )}
 
-          {(submitted || current.attempted) && (
-            <div className="result">
-              {!current.correct && selected !== current.correctAnswer && <p>❌ Incorrect!</p>}
-              <p>{current.info} <a href={current.readMore} target="_blank" rel="noreferrer">Read More</a></p>
+            <div className="options">
+              {current.options.map((option) => {
+                const isSelected = selected === option;
+                const isCorrect = submitted && option === current.correctAnswer;
+                const isWrong = submitted && isSelected && option !== current.correctAnswer;
+
+                let className = "option-btn";
+                if (submitted || current.attempted) {
+                  if (isCorrect) className += " correct";
+                  else if (isWrong) className += " wrong";
+                } else if (isSelected) {
+                  className += " selected";
+                }
+
+                return (
+                  <button
+                    key={option}
+                    className={className}
+                    onClick={() => !submitted && setSelected(option)}
+                    disabled={submitted || current.attempted}
+                  >
+                    {option}
+                  </button>
+                );
+              })}
             </div>
-          )}
 
-          <div className="nav-buttons">
-            <button onClick={previousQuestion} disabled={currentQ === 0}>⬅️ Previous</button>
-            <button onClick={nextQuestion}>{currentQ === questions.length - 1 ? "Finish" : "Next ➡️"}</button>
+            <div className="submit-container">
+              <button
+                className="submit-btn"
+                onClick={() => handleSubmit(false)}
+                disabled={!selected || submitted || current.attempted}
+              >
+                Submit
+              </button>
+            </div>
+
+            {(submitted || current.attempted) && (
+              <>
+                <div className="info-text">
+                  <p>{current.info}</p>
+                  <a href={current.readMore} target="_blank" rel="noopener noreferrer">
+                    Read More
+                  </a>
+                </div>
+
+                <div className="nav-buttons">
+                  <button onClick={previousQuestion} disabled={currentQ === 0}>
+                    ◀️ Previous
+                  </button>
+                  <button onClick={nextQuestion}>
+                    {currentQ + 1 === questions.length ? "Finish" : "Next ▶️"}
+                  </button>
+                </div>
+              </>
+            )}
           </div>
         </div>
       </div>
-
-      {/* <button id="dark-mode-btn" onClick={toggleDarkMode}>
-        {darkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
-      </button> */}
     </div>
   );
 }
