@@ -183,12 +183,12 @@ function App() {
         <button className="button-85" onClick={handleStart}>
           ▶️ Start Game
         </button>
-        {/* <button
+        <button
           className="dark-mode-toggle"
           onClick={toggleDarkMode}
         >
           {darkMode ? "🌞 Light Mode" : "🌙 Dark Mode"}
-        </button> */}
+        </button>
       </div>
     );
   }
@@ -203,12 +203,12 @@ function App() {
         <button className="button-85" onClick={handleRestart}>
           🔁 Restart Game
         </button>
-        {/* <button
+        <button
           className="dark-mode-toggle"
           onClick={toggleDarkMode}
         >
           {darkMode ? "🌞 Light Mode" : "🌙 Dark Mode"}
-        </button> */}
+        </button>
       </div>
     );
   }
