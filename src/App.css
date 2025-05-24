@@ -617,11 +617,15 @@ body {
   }
 
   /* Navigation buttons full width stacked vertically */
-  .nav-buttons {
-    flex-direction: column;
-    gap: 0.8rem;
-  }
+.nav-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
 
+.nav-buttons > * {
+  flex: 1 1 calc(50% - 0.4rem); /* 2 items per row with gap accounted */
+}
   .nav-buttons button {
     width: 100%;
     font-size: 1.1rem;
@@ -641,12 +645,12 @@ body {
     padding: 1.5rem;
   }
 
-  /* Dark mode toggle smaller and reposition */
+  /* Dark mode toggle smaller and reposition
   .dark-mode-toggle {
     top: 0.5rem;
     right: 0.5rem;
     font-size: 1.4rem;
-  }
+  } */
 
   /* Instruction list smaller font */
   .instructions li {
