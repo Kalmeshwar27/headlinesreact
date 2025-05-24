@@ -592,10 +592,11 @@ body {
 
   /* Options layout: two per row */
   .options {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.3rem;
-    justify-content: space-between;
+     display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+  padding: 1rem 0;
   }
 
   .option-btn {
@@ -605,6 +606,20 @@ body {
   padding: 0.6rem 1rem;
   font-size: 0.95rem;
   }
+  /* Responsive styles */
+@media (max-width: 768px) {
+  .option-btn {
+    font-size: 0.95rem;
+    padding: 0.6rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .option-btn {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+}
 
   .submit-btn {
     width: 100%;
