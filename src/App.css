@@ -11,16 +11,12 @@ body {
   background-color: #fafafa;
   color: #222;
   overflow-x: hidden;
-  margin: 0;
-  padding: 0;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   background: #f0f0f0; /* or your preferred background */
 }
-
-
 
 /* Loading screen */
 .loading-screen {
@@ -33,7 +29,7 @@ body {
 }
 
 .loader {
-   will-change: transform;
+  will-change: transform;
   color: blue;
   border: 6px solid #eee;
   border-top: 6px solid #174ad7;
@@ -42,32 +38,35 @@ body {
   height: 50px;
   animation: spin 1s linear infinite;
 }
+
 @keyframes spin {
   to {
     transform: rotate(360deg);
   }
 }
 
-
 /* Start Screen */
-.start-screen { 
+.start-screen {
   max-width: 600px;
   margin: 3rem auto;
   text-align: center;
   padding: 2rem;
-  background-image: url('./assets/images/box.png'); /* Replace with your image path */
-  background-size: cover; /* fills the entire area */
+  background-image: url('./assets/images/box.png');
+  /* Replace with your image path */
+  background-size: cover;
+  /* fills the entire area */
   background-position: center;
   background-repeat: no-repeat;
   color: white;
   border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .start-screen h1 {
   font-size: 2.75rem;
   margin-bottom: 1rem;
-  color: white; /* Override to white for readability */
+  color: white;
+  /* Override to white for readability */
 }
 
 .start-screen p {
@@ -91,7 +90,6 @@ body {
   background-color: #e68a00;
 }
 
-
 .instructions {
   text-align: left;
   margin: 2rem 0;
@@ -109,15 +107,36 @@ body {
   opacity: 0;
 }
 
-.instructions li:nth-child(1) { animation-delay: 0.2s; }
-.instructions li:nth-child(2) { animation-delay: 0.4s; }
-.instructions li:nth-child(3) { animation-delay: 0.6s; }
-.instructions li:nth-child(4) { animation-delay: 0.8s; }
-.instructions li:nth-child(5) { animation-delay: 1s; }
+.instructions li:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.instructions li:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.instructions li:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.instructions li:nth-child(4) {
+  animation-delay: 0.8s;
+}
+
+.instructions li:nth-child(5) {
+  animation-delay: 1s;
+}
 
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Button */
@@ -149,11 +168,11 @@ body {
 .container {
   width: 100%;
   max-width: 700px;
-
   background: url('./assets/images/bg4.jpg') no-repeat center center;
   background-size: cover;
   border-radius: 12px;
-  padding: 30px 25px 40px; /* more bottom padding if needed */
+  padding: 30px 25px 40px;
+  /* more bottom padding if needed */
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   color: #222;
   text-align: center;
@@ -161,7 +180,6 @@ body {
   user-select: none;
   display: flex;
   flex-direction: column;
-
 }
 
 .headline-title {
@@ -206,7 +224,6 @@ body {
   gap: 1rem;
   border-radius: 15px;
   padding: 2rem;
-  /* box-shadow: 0 4px 10px rgba(0,0,0,0.15); */
 }
 
 /* News Image */
@@ -225,12 +242,10 @@ body {
   max-width: 480px;
   width: 100%;
   background: #f5e7cc;
- 
   display: flex;
   flex-direction: column;
   user-select: none;
 }
-
 
 .dark-mode .headline-box {
   background: #222;
@@ -240,17 +255,13 @@ body {
 
 /* Headline Text */
 .headline-text {
-   /* border: 3px solid #333; /* This adds a solid square/rectangle border */
-  border-radius: 8px;      /* Optional: Slightly rounded corners 
-  padding: 1.5rem; */
+  border-radius: 8px;
   font-family: "Georgia", serif;
   font-weight: 700;
   font-size: 1.3rem;
   margin-bottom: 1rem;
   user-select: text;
   line-height: 1.4;
-  
-  
 }
 
 #blank {
@@ -440,7 +451,7 @@ body {
   user-select: none;
 }
 
-/* ✅ Updated Game Over Screen */
+/* Game Over Screen */
 .game-over-screen {
   position: fixed;
   top: 0;
@@ -466,7 +477,7 @@ body {
   border-radius: 16px;
   max-width: 90%;
   width: 500px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .game-over h2 {
@@ -486,26 +497,10 @@ body {
   }
 }
 
-/* Dark Mode Toggle */
-/* .dark-mode-toggle {
-  position: fixed;
-  top: 0.75rem;
-  right: 0.75rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 1.6rem;
-  user-select: none;
-}
-
-.dark-mode-toggle:focus {
-  outline: 2px solid #2980b9;
-  outline-offset: 2px;
-} */
-
-/* ✅ Improved Content Box */
+/* Content Box */
 .content-box {
-  background: image(url('./assets/images/bg4.jpg')) no-repeat center center;
+  /* background: url('./assets/images/bg4.jpg') no-repeat center center; */
+  background-size: cover; /* Use cover for content-box as well */
   max-width: 700px;
   width: 100%;
   border: 3px solid #222;
@@ -515,175 +510,6 @@ body {
   user-select: none;
   margin: 1rem auto;
   transition: background 0.3s ease, border-color 0.3s ease;
-}
-
-/* .dark-mode .content-box {
-  background: #222;
-  border-color: #555;
-  box-shadow: 4px 4px 0 #555;
-}
-
-@media (max-width: 640px) {
-  .content-box {
-    max-width: 100%;
-    padding: 1rem;
-  }
-} */
-/* === Mobile Responsive Adjustments === */
-@media (max-width: 600px) {
-  .container {
-    max-width: 100%;
-    margin: 0.5rem 0 1.5rem;
-    padding: 0 0.8rem;
-  }
-
-  .headline-title {
-    font-size: 2.2rem;
-    letter-spacing: 0.03rem;
-  }
-
-  .headline-header {
-    font-size: 0.8rem;
-    padding-bottom: 0.3rem;
-  }
-
-  .info-bar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.18rem;
-    font-size: 0.95rem;
-  }
-
-  .content-box,
-  .headline-box {
-    background: image(url('./assets/images/bg4.jpg')) no-repeat center center;
-    background-size: contain;
-    max-width: 100%;
-    padding: 0.8rem;
-    box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
-  }
-
-  .news-image {
-    height: auto;
-    max-width: 100%;
-    border-width: 1.5px;
-    width: 100%;
-    background: url('./assets/images/box.png') no-repeat center;
-    background-size: contain;
-    aspect-ratio: 3 / 2;
-    margin: 15px 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-  }
-
-  .headline-text {
-    font-size: 1rem;
-    line-height: 1.25;
-  }
-
-  .speak-btn {
-    font-size: 0.85rem;
-    padding: 0.25rem 0.5rem;
-  }
-
-  /* Options layout: two per row */
-  .options {
-     display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: space-between;
-  padding: 1rem 0;
-  }
-
-  .option-btn {
-     flex: 1 1 calc(50% - 0.5rem);
-  box-sizing: border-box;
-  text-align: center;
-  padding: 0.6rem 1rem;
-  font-size: 0.95rem;
-  }
-  /* Responsive styles */
-@media (max-width: 768px) {
-  .option-btn {
-    font-size: 0.95rem;
-    padding: 0.6rem;
-  }
-}
-
-@media (max-width: 400px) {
-  .option-btn {
-    font-size: 0.9rem;
-    padding: 0.5rem;
-  }
-}
-
-  .submit-btn {
-    width: 100%;
-    font-size: 1.1rem;
-    padding: 0.7rem 0;
-  }
-
-  .nav-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.6rem;
-  }
-
-  .nav-buttons > * {
-    flex: 1 1 calc(50% - 0.3rem);
-  }
-
-  .nav-buttons button {
-    width: 100%;
-    font-size: 1rem;
-    padding: 0.65rem 0;
-  }
-
-  .status-bar {
-    flex-direction: column;
-    gap: 0.25rem;
-    font-size: 0.95rem;
-  }
-
-  .game-over {
-    width: 90%;
-    padding: 1.2rem;
-  }
-
-  .instructions li {
-    font-size: 0.95rem;
-  }
-}
-
-/* Extra small screens (phones) */
-@media (max-width: 400px) {
-  .headline-title {
-    font-size: 1.8rem;
-  }
-
-  .headline-text {
-    font-size: 0.95rem;
-  }
-
-  .button-85,
-  .submit-btn {
-    font-size: 0.95rem;
-    padding: 0.6rem 1.2rem;
-  }
-
-  .speak-btn {
-    font-size: 0.8rem;
-    padding: 0.25rem 0.4rem;
-  }
-
-  .option-btn {
-    font-size: 0.9rem;
-    padding: 0.45rem 0.6rem;
-  }
 }
 
 .image-frame {
@@ -697,7 +523,6 @@ body {
   justify-content: center;
   overflow: hidden;
   border-radius: 10px;
-  /* box-shadow: 0 4px 15px rgba(0,0,0,0.1); */
 }
 
 .image-frame img {
@@ -709,46 +534,220 @@ body {
   user-select: none;
 }
 
-
 .image-frame:hover {
   transform: scale(1.02);
 }
 
-.news-image {
-  max-width: 100%;
-  border-radius: 12px;
-}
-@media (max-width: 600px) {
-  .container, .start-screen, .headline-box, .content {
-    padding: 1rem;
+/* === Mobile Responsive Adjustments === */
+@media (max-width: 768px) {
+  .start-screen {
+    margin: 1.5rem auto;
+    padding: 1.5rem;
   }
 
-  .start-screen h1,
+  .start-screen h1 {
+    font-size: 2.2rem;
+  }
+
+  .start-screen p {
+    font-size: 1rem;
+  }
+
+  .instructions li {
+    font-size: 1rem;
+  }
+
+  .container {
+    max-width: 100%;
+    margin: 0.5rem 0 1.5rem;
+    padding: 1.5rem; /* Adjust padding for smaller screens */
+  }
+
   .headline-title {
-    font-size: 2rem;
+    font-size: 2.2rem;
+    letter-spacing: 0.03rem;
   }
 
-  .options-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.5rem;
+  .headline-header {
+    font-size: 0.85rem;
+    padding-bottom: 0.4rem;
+    margin-bottom: 0.8rem;
+    flex-direction: column; /* Stack elements on smaller screens */
+    align-items: center;
+  }
+
+  .info-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .content,
+  .content-box {
+    padding: 1rem; /* Reduced padding for content areas */
+  }
+
+  .headline-box {
+    max-width: 100%; /* Ensure it takes full width */
+  }
+
+  .news-image {
+    max-width: 100%;
+    border-width: 2px;
+    margin: 15px 0;
+  }
+
+  .headline-text {
+    font-size: 1.1rem;
+    line-height: 1.3;
+  }
+
+  .speak-btn {
+    font-size: 0.9rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+  .options {
+    gap: 1rem;
+    padding: 0.5rem 0;
   }
 
   .option-btn {
     flex: 1 1 calc(50% - 0.5rem);
-    box-sizing: border-box;
+    min-width: unset; /* Allow flexibility */
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
   }
 
-  .headline-header,
-  .info-bar {
-    flex-direction: column;
-    gap: 0.5rem;
-    text-align: center;
-  }
-
-  .news-image {
+  .submit-btn {
     width: 100%;
-    height: auto;
+    font-size: 1.2rem;
+    padding: 0.7rem 0;
+  }
+
+  .nav-buttons {
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+
+  .nav-buttons > * {
+    flex: 1 1 calc(50% - 0.4rem);
+  }
+
+  .nav-buttons button {
+    font-size: 1rem;
+    padding: 0.65rem 0;
+  }
+
+  .status-bar {
+    flex-direction: column;
+    gap: 0.3rem;
+    font-size: 1rem;
+  }
+
+  .game-over {
+    width: 95%;
+    padding: 1.5rem;
+  }
+
+  .game-over h2 {
+    font-size: 2.2rem;
+  }
+
+  .game-over p {
+    font-size: 1.1rem;
+  }
+
+  .button-85 {
+    font-size: 1.1rem;
+    padding: 0.6rem 1.5rem;
+  }
+}
+
+/* Extra small screens (e.g., phones in portrait) */
+@media (max-width: 480px) {
+  .start-screen {
+    margin: 1rem auto;
+    padding: 1rem;
+  }
+
+  .start-screen h1 {
+    font-size: 1.8rem;
+  }
+
+  .start-screen p {
+    font-size: 0.9rem;
+  }
+
+  .instructions li {
+    font-size: 0.9rem;
+  }
+
+  .container {
+    padding: 1rem;
+  }
+
+  .headline-title {
+    font-size: 1.8rem;
+  }
+
+  .info-bar {
+    font-size: 0.9rem;
+  }
+
+  .headline-text {
+    font-size: 0.95rem;
+  }
+
+  .speak-btn {
+    font-size: 0.8rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .options {
+    gap: 0.8rem;
+  }
+
+  .option-btn {
+    flex: 1 1 calc(50% - 0.4rem);
+    padding: 0.5rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .submit-btn {
+    font-size: 1rem;
+    padding: 0.6rem 0;
+  }
+
+  .nav-buttons button {
+    font-size: 0.9rem;
+    padding: 0.55rem 0;
+  }
+
+  .status-bar {
+    font-size: 0.9rem;
+  }
+
+  .game-over h2 {
+    font-size: 1.8rem;
+  }
+
+  .game-over p {
+    font-size: 1rem;
+  }
+
+  .button-85 {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* Specific adjustments for very small options buttons if needed */
+@media (max-width: 360px) {
+  .option-btn {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.6rem;
   }
 }
