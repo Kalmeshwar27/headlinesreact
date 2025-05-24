@@ -166,7 +166,6 @@ body {
 
 /* Container */
 .container {
-  height: 1140px;
   width: 100%;
   max-width: 670px;
   background: url('./assets/images/bg4.jpg') no-repeat center center;
@@ -687,8 +686,6 @@ body {
   }
 
   .container {
-    width: 100%;
-    max-width: 600px;
     padding: 1rem;
   }
 
