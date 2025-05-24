@@ -234,7 +234,9 @@ function App() {
         </div>
 
         <div className="content">
-          <img src={current.image} alt="News" className="news-image" />
+          <div className="image-frame">
+  <img src={current.image} alt="News" className="news-image" />
+</div>
           <div className="headline-box">
             <p
               className="headline-text"
