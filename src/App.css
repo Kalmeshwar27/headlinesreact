@@ -530,160 +530,144 @@ body {
   }
 } */
 /* === Mobile Responsive Adjustments === */
-
 @media (max-width: 768px) {
-  /* Container adjusts to full width with padding */
   .container {
     max-width: 100%;
-    margin: 1rem 0 2rem;
-    padding: 0 1rem;
+    margin: 0.5rem 0 1.5rem;
+    padding: 0 0.8rem;
   }
 
-  /* Headline Title smaller and more responsive */
   .headline-title {
-    font-size: 2.5rem;
-    letter-spacing: 0.05rem;
+    font-size: 2.2rem;
+    letter-spacing: 0.03rem;
   }
 
-  /* Headline Header adjusts font size */
   .headline-header {
-    font-size: 0.85rem;
-    padding-bottom: 0.4rem;
+    font-size: 0.8rem;
+    padding-bottom: 0.3rem;
   }
 
-  /* Info bar stacks vertically for narrow widths */
   .info-bar {
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.3rem;
-    font-size: 1rem;
+    gap: 0.25rem;
+    font-size: 0.95rem;
   }
 
-  /* Content box width and padding */
   .content-box,
   .headline-box {
     max-width: 100%;
-    padding: 1rem;
-    box-shadow: 3px 3px 8px rgba(0,0,0,0.12);
+    padding: 0.8rem;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
   }
 
-  /* News image smaller, full width */
   .news-image {
-    height: 80%;
+    height: auto;
     max-width: 100%;
-    border-width: 2px;
+    border-width: 1.5px;
     width: 100%;
-  background: url('./assets/images/box.png') no-repeat center;
-  background-size: contain;
-  aspect-ratio: 3 / 2;
-  margin: 20px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-
-  }
-
-  /* Headline text smaller font */
-  .headline-text {
-    font-size: 1.1rem;
-    line-height: 1.3;
-  }
-
-  /* Speak button smaller padding and font */
-  .speak-btn {
-    font-size: 0.9rem;
-    padding: 0.3rem 0.6rem;
-  }
-
-  /* Options layout: full width buttons, stacked */
-  .options {
-    color: #ffffff;
-    flex-wrap: nowrap;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .option-btn {
-    flex: none;
-    width: 100%;
-    min-width: auto;
-    font-size: 1rem;
-    padding: 0.6rem 1rem;
-  }
-
-  /* Submit button full width */
-  .submit-btn {
-    width: 100%;
-    font-size: 1.2rem;
-    padding: 0.8rem 0;
-  }
-
-  /* Navigation buttons full width stacked vertically */
-.nav-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.8rem;
-}
-
-.nav-buttons > * {
-  flex: 1 1 calc(50% - 0.4rem); /* 2 items per row with gap accounted */
-}
-  .nav-buttons button {
-    width: 100%;
-    font-size: 1.1rem;
-    padding: 0.75rem 0;
-  }
-
-  /* Status bar stacks vertically */
-  .status-bar {
-    flex-direction: column;
-    gap: 0.3rem;
-    font-size: 1rem;
-  }
-
-  /* Game over box smaller width */
-  .game-over {
-    width: 90%;
-    padding: 1.5rem;
-  }
-
-  /* Dark mode toggle smaller and reposition
-  .dark-mode-toggle {
-    top: 0.5rem;
-    right: 0.5rem;
-    font-size: 1.4rem;
-  } */
-
-  /* Instruction list smaller font */
-  .instructions li {
-    font-size: 1rem;
-  }
-}
-
-/* Extra small screens (phones) */
-@media (max-width: 400px) {
-  .headline-title {
-    font-size: 2rem;
+    background: url('./assets/images/box.png') no-repeat center;
+    background-size: contain;
+    aspect-ratio: 3 / 2;
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
   }
 
   .headline-text {
     font-size: 1rem;
-  }
-
-  .button-85,
-  .submit-btn {
-    font-size: 1rem;
-    padding: 0.6rem 1.5rem;
+    line-height: 1.25;
   }
 
   .speak-btn {
     font-size: 0.85rem;
     padding: 0.25rem 0.5rem;
   }
+
+  /* Options layout: two per row */
+  .options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: space-between;
+  }
+
+  .option-btn {
+    flex: 1 1 calc(50% - 0.5rem);
+    font-size: 0.95rem;
+    padding: 0.5rem 0.8rem;
+    text-align: center;
+  }
+
+  .submit-btn {
+    width: 100%;
+    font-size: 1.1rem;
+    padding: 0.7rem 0;
+  }
+
+  .nav-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  .nav-buttons > * {
+    flex: 1 1 calc(50% - 0.3rem);
+  }
+
+  .nav-buttons button {
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.65rem 0;
+  }
+
+  .status-bar {
+    flex-direction: column;
+    gap: 0.25rem;
+    font-size: 0.95rem;
+  }
+
+  .game-over {
+    width: 90%;
+    padding: 1.2rem;
+  }
+
+  .instructions li {
+    font-size: 0.95rem;
+  }
 }
+
+/* Extra small screens (phones) */
+@media (max-width: 400px) {
+  .headline-title {
+    font-size: 1.8rem;
+  }
+
+  .headline-text {
+    font-size: 0.95rem;
+  }
+
+  .button-85,
+  .submit-btn {
+    font-size: 0.95rem;
+    padding: 0.6rem 1.2rem;
+  }
+
+  .speak-btn {
+    font-size: 0.8rem;
+    padding: 0.25rem 0.4rem;
+  }
+
+  .option-btn {
+    font-size: 0.9rem;
+    padding: 0.45rem 0.6rem;
+  }
+}
+
 .image-frame {
   width: 100%;
   background: url('./assets/images/box.png') no-repeat center;
