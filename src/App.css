@@ -1,4 +1,3 @@
-
 /* Global resets */
 * {
   box-sizing: border-box;
@@ -21,43 +20,11 @@ body {
   background: #f0f0f0; /* or your preferred background */
 }
 
-/* Dark mode styles */
-.dark-mode {
-  background-color: #121212;
-  color: #ddd;
-}
 
-.dark-mode .headline-box {
-  background: #333;
-  border-color: #555;
-}
-
-.dark-mode .option-btn {
-  background-color: #555;
-  color: #ddd;
-}
-
-.dark-mode .option-btn.correct {
-  background-color: #28a745 !important;
-  color: #fff;
-}
-
-.dark-mode .option-btn.wrong {
-  background-color: #dc3545 !important;
-  color: #fff;
-}
-
-.dark-mode .button-85 {
-  background-color: #444;
-  color: #ddd;
-}
-
-.dark-mode a {
-  color: #66ccff;
-}
 
 /* Loading screen */
 .loading-screen {
+  color: rgb(0, 0, 0);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -66,8 +33,10 @@ body {
 }
 
 .loader {
+   will-change: transform;
+  color: blue;
   border: 6px solid #eee;
-  border-top: 6px solid #555;
+  border-top: 6px solid #174ad7;
   border-radius: 50%;
   width: 50px;
   height: 50px;
@@ -81,17 +50,47 @@ body {
 
 
 /* Start Screen */
-.start-screen {
+.start-screen { 
   max-width: 600px;
   margin: 3rem auto;
   text-align: center;
-  padding: 0 1rem;
+  padding: 2rem;
+  background-image: url('./assets/images/box.png'); /* Replace with your image path */
+  background-size: cover; /* fills the entire area */
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
 .start-screen h1 {
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
+  font-size: 2.75rem;
+  margin-bottom: 1rem;
+  color: white; /* Override to white for readability */
 }
+
+.start-screen p {
+  font-size: 1.1rem;
+  margin: 0.75rem 0;
+}
+
+.start-button {
+  margin-top: 1.5rem;
+  padding: 0.75rem 2rem;
+  font-size: 1.2rem;
+  border: none;
+  background-color: #ff9900;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.start-button:hover {
+  background-color: #e68a00;
+}
+
 
 .instructions {
   text-align: left;
@@ -225,15 +224,13 @@ body {
 .headline-box {
   max-width: 480px;
   width: 100%;
-  background: #F5E7CC;
-  
-  border-radius: 12px;
-  padding: 1.5rem;
-  /* box-shadow: 4px 4px 0 #aaa; */
+  background: #f5e7cc;
+ 
   display: flex;
   flex-direction: column;
   user-select: none;
 }
+
 
 .dark-mode .headline-box {
   background: #222;
@@ -243,12 +240,17 @@ body {
 
 /* Headline Text */
 .headline-text {
+   /* border: 3px solid #333; /* This adds a solid square/rectangle border */
+  border-radius: 8px;      /* Optional: Slightly rounded corners 
+  padding: 1.5rem; */
   font-family: "Georgia", serif;
   font-weight: 700;
   font-size: 1.3rem;
   margin-bottom: 1rem;
   user-select: text;
   line-height: 1.4;
+  
+  
 }
 
 #blank {
@@ -294,14 +296,14 @@ body {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.6rem;
+  gap: 1.6rem;
   margin-bottom: 1rem;
   justify-content: center;
 }
 
 .option-btn {
   flex: 1 1 45%;
-  min-width: 180px;
+  min-width: 203px;
   text-align: center;
   background-color: #673318;
   border: 2px solid #222;
@@ -309,17 +311,18 @@ body {
   padding: 0.7rem 1.2rem;
   font-size: 1.05rem;
   font-weight: 700;
+  color: #ffffff;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
   user-select: none;
 }
 
 .option-btn:hover:not(:disabled) {
-  background-color: #ddd;
+  background-color: #000000;
 }
 
 .option-btn.selected {
-  background-color: #222;
+  background-color: #010101;
   color: #fff;
 }
 
@@ -400,7 +403,7 @@ body {
 }
 
 .nav-buttons button {
-  background-color: #222;
+  background-color: #673509;
   border: 3px solid #222;
   border-radius: 15px;
   padding: 0.7rem 1.6rem;

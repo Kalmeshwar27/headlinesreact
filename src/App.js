@@ -49,7 +49,6 @@ function App() {
   const [score, setScore] = useState(0);
   const [timeLeft, setTimeLeft] = useState(20);
   const [gameOver, setGameOver] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
 
   const current = questions[currentQ];
 
@@ -152,10 +151,6 @@ function App() {
     setTimeLeft(20);
   };
 
-  const toggleDarkMode = () => {
-    setDarkMode((prev) => !prev);
-  };
-
   if (loading) {
     return (
       <div className="loading-screen">
@@ -167,7 +162,7 @@ function App() {
 
   if (!started) {
     return (
-      <div className={`start-screen ${darkMode ? "dark-mode" : ""}`}>
+      <div className="start-screen">
         <h1>The Headlines Game</h1>
         <div className="instructions">
           <h2>How to Play</h2>
@@ -183,19 +178,13 @@ function App() {
         <button className="button-85" onClick={handleStart}>
           ▶️ Start Game
         </button>
-        <button
-          className="dark-mode-toggle"
-          onClick={toggleDarkMode}
-        >
-          {darkMode ? "🌞 Light Mode" : "🌙 Dark Mode"}
-        </button>
       </div>
     );
   }
 
   if (gameOver) {
     return (
-      <div className={`game-over-screen ${darkMode ? "dark-mode" : ""}`}>
+      <div className="game-over-screen">
         <h2 className="game-over-text">🎉 Game Over 🎉</h2>
         <p className="final-score">
           You scored: {score} / {questions.length}
@@ -203,18 +192,12 @@ function App() {
         <button className="button-85" onClick={handleRestart}>
           🔁 Restart Game
         </button>
-        <button
-          className="dark-mode-toggle"
-          onClick={toggleDarkMode}
-        >
-          {darkMode ? "🌞 Light Mode" : "🌙 Dark Mode"}
-        </button>
       </div>
     );
   }
 
   return (
-    <div className={`container ${darkMode ? "dark-mode" : ""}`}>
+    <div className="container">
       <div className="content-box">
         <h1 className="headline-title">The Headlines</h1>
         <div className="headline-header">
@@ -225,18 +208,12 @@ function App() {
         <div className="info-bar">
           <span>Score: {score}</span>
           <span>Time Left: {timeLeft}s</span>
-          <button
-            className="dark-mode-toggle"
-            onClick={toggleDarkMode}
-          >
-            {darkMode ? "🌞 Light Mode" : "🌙 Dark Mode"}
-          </button>
         </div>
 
         <div className="content">
           <div className="image-frame">
-  <img src={current.image} alt="News" className="news-image" />
-</div>
+            <img src={current.image} alt="News" className="news-image" />
+          </div>
           <div className="headline-box">
             <p
               className="headline-text"
@@ -299,7 +276,7 @@ function App() {
                     ◀️ Previous
                   </button>
                   <button onClick={nextQuestion}>
-                    {currentQ + 1 === questions.length ? "Finish" : "Next ▶️"}
+                    {currentQ + 1 === questions.length ? "Finish ▶️" : "Next ▶️"}
                   </button>
                 </div>
               </>
