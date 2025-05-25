@@ -379,7 +379,7 @@ body {
 }
 
 .option-btn.wrong {
-  background-color: #dc3545 !important;
+  background-color: #f8021a !important;
   color: white;
   cursor: default;
 }
@@ -790,7 +790,7 @@ background-image: url('./assets/images/bg5.jpg'); /* Check if this is correct */
   }
 
   .headline-text {
-    font-size: 0.95rem;
+    font-size: 100rem;
   }
 
   .speak-btn {
