@@ -653,28 +653,7 @@ user-select:none
     padding: 0.3rem 0.6rem;
   }
 
-  .options {
-    gap: 1rem;
-    padding: 0.5rem 0;
-  }
 
-  .option-btn {
-   flex: 0 0 48%;  /* Forces each button to take about half the row */
-  box-sizing: border-box;
-  min-width: unset;  /* Optional: remove the 203px min-width */
-  max-width: 100%;
-  text-align: center;
-  background-color: #673318;
-  border: 2px solid #000000;
-  border-radius: 12px;
-  padding: 0.7rem 1.2rem;
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: #ffffff;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  user-select: none;
-  }
 
   .submit-btn {
     width: 100%;
