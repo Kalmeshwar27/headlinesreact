@@ -701,10 +701,16 @@ body {
     font-size: 1.8rem;
   }
 
-  .info-bar {
-    font-size: 0.9rem;
-  }
-
+ .info-bar {
+  font-size: 0.9rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem; /* optional spacing between columns */
+}
+.info-bar > div {
+  flex: 1 1 45%; /* Each child takes up ~50% width */
+  min-width: 200px; /* optional, for responsiveness */
+}
   .headline-text {
     font-size: 0.95rem;
   }
