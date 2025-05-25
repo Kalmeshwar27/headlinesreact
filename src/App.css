@@ -861,8 +861,8 @@ user-select:none
     width: 100%;
   }
 
-  .options {
-    color: #ffffff;
+ .options {
+  color: #ffffff;
   max-width: 480px;
   width: 100%;
   display: flex;
@@ -870,14 +870,11 @@ user-select:none
   gap: 1.6rem;
   margin-bottom: 1rem;
   justify-content: center;
+}
 
-  }
-
-  .option-btn {
-   flex: 0 0 48%;  /* Forces each button to take about half the row */
-  box-sizing: border-box;
-  min-width: unset;  /* Optional: remove the 203px min-width */
-  max-width: 100%;
+.option-btn {
+  flex: 1 1 45%;
+  min-width: 203px;
   text-align: center;
   background-color: #673318;
   border: 2px solid #000000;
@@ -889,8 +886,8 @@ user-select:none
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
   user-select: none;
-
-  }
+ 
+}
 @media (max-width: 500px) {
   .option-btn {
     flex: 0 0 100%;
