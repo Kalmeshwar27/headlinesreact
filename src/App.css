@@ -861,7 +861,7 @@ user-select:none
     width: 100%;
   }
 
- .options {
+ /* .options {
   color: #ffffff;
   max-width: 480px;
   width: 100%;
@@ -892,7 +892,7 @@ user-select:none
   .option-btn {
     flex: 0 0 100%;
   }
-}
+} */
 
   .submit-container {
     text-align: center;
