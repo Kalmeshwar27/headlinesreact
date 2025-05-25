@@ -790,7 +790,7 @@ background-image: url('./assets/images/bg5.jpg'); /* Check if this is correct */
   }
 
   .headline-text {
-    font-size: 100rem;
+    font-size: 1rem;
   }
 
   .speak-btn {
