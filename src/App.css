@@ -45,19 +45,19 @@ body {
   }
 }
 
-
 /* Start Screen */
 .start-screen {
-  max-width: 400px;
+  height: 70vh;
+  max-width: 500px;
   margin: 3rem;
   text-align: center;
   padding: 2rem;
-  /* background-image: url('./assets/images/bg5.jpg');
+   background-image: url('./assets/images/bg5.jpg');
   /* Replace with your image path */
   background-size: cover;
   /* fills the entire area */
-  /* background-position: center;
-  background-repeat: no-repeat;  */
+  background-position: center;
+  background-repeat: no-repeat; 
   color: rgb(0, 0, 0);
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -66,7 +66,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 50vh;
+  min-height: 95vh;
 }
 
 /* The above CSS code is styling the `<h1>` element within the `.start-screen` class. It sets the font family to a specific list of system fonts, with a fallback to generic sans-serif fonts. The font size is set to 2.75rem, margin bottom is 1rem, and the text color is set to black (rgb(0, 0, 0)). Additionally, there is a comment indicating that the color is overridden to white for readability, although this override is not present in the code snippet provided. */
@@ -110,8 +110,6 @@ body {
 .start-button:hover:not(:disabled) {
   background-color: #000000;
 }
-
-
 
 .start-button:hover {
   background-color: #e68a00;
