@@ -742,7 +742,13 @@ user-select:none
   .container {
     padding: 1rem;
   }
-
+ .headline-header {
+    font-size: 0.85rem;
+    padding-bottom: 0.4rem;
+    margin-bottom: 0.8rem;
+    flex-direction: column; /* Stack elements on smaller screens */
+    align-items: center;
+  }
   .headline-title {
     font-size: 1.8rem;
   }
