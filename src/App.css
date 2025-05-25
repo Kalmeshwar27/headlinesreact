@@ -733,12 +733,14 @@ user-select:none
     padding: 1rem;
   }
  .headline-header {
-    font-size: 0.85rem;
-    padding-bottom: 0.4rem;
-    margin-bottom: 0.8rem;
-    flex-direction: column; /* Stack elements on smaller screens */
-    align-items: center;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-size: 0.85rem;
+  padding-bottom: 0.4rem;
+  margin-bottom: 0.8rem;
+  border-bottom: 2px solid #000; /* optional, for the underline effect */
+}
   .headline-title {
     font-size: 1.8rem;
   }
@@ -805,5 +807,162 @@ user-select:none
   .option-btn {
     font-size: 0.85rem;
     padding: 0.4rem 0.6rem;
+  }
+}
+/* Add these at the bottom of your App.css */
+
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  .content-box {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .headline-title,
+  .headline-header,
+  .info-bar,
+  .headline-text,
+  .info-text {
+    text-align: center;
+  }
+
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .image-frame {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .news-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .headline-box {
+    width: 100%;
+  }
+
+  .options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .option-btn {
+    width: 100%;
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .submit-container {
+    text-align: center;
+    margin-top: 15px;
+  }
+
+  .submit-btn {
+    width: 80%;
+    max-width: 300px;
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .nav-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    margin-top: 15px;
+  }
+
+  .nav-buttons button {
+    width: 80%;
+    max-width: 250px;
+    padding: 10px;
+  }
+
+  .start-screen,
+  .game-over-screen {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .button-85 {
+    width: 80%;
+    max-width: 250px;
+    padding: 12px;
+    font-size: 18px;
+  }
+
+  .instructions ul {
+    padding-left: 20px;
+    text-align: left;
+  }
+}
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .start-screen,
+  .container,
+  .headline-box,
+  .options,
+  .news-image {
+    width: 90%;
+    max-width: 100%;
+    padding: 1rem;
+  }
+
+  .start-screen h1 {
+    font-size: 2rem;
+  }
+
+  .instructions li {
+    font-size: 1rem;
+  }
+
+  .headline-title {
+    font-size: 2.2rem;
+  }
+
+  .option-btn {
+    min-width: 100%;
+    font-size: 1rem;
+  }
+
+  .start-button {
+    min-width: 100%;
+    font-size: 1rem;
+  }
+
+  .info-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 1rem;
+  }
+
+  .headline-header {
+    flex-direction: column;
+    font-size: 0.85rem;
+    align-items: flex-start;
+  }
+
+  .content {
+    padding: 1rem;
+  }
+
+  .headline-text {
+    font-size: 1.3rem;
+  }
+
+  .button-85 {
+    font-size: 1rem;
+    padding: 0.5rem 1.2rem;
   }
 }
