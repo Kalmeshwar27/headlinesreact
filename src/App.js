@@ -155,7 +155,7 @@ function App() {
     return (
       <div className="loading-screen">
         <div className="loader"></div>
-        <h1>Loading...</h1>
+        <h2>Loading...</h2>
       </div>
     );
   }
@@ -185,7 +185,7 @@ function App() {
   if (gameOver) {
     return (
       <div className="game-over-screen">
-        <h2 className="game-over-text">🎉 Game Over 🎉</h2>
+        <h1 className="game-over-text">🎉 Game Over 🎉</h1>
         <p className="final-score">
           You scored: {score} / {questions.length}
         </p>
