@@ -155,7 +155,7 @@ function App() {
     return (
       <div className="loading-screen">
         <div className="loader"></div>
-        <h2>Loading...</h2>
+        <h3>Loading...</h3>
       </div>
     );
   }
