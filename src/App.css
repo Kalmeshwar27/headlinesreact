@@ -578,7 +578,9 @@ body {
 }
 
 /* === Mobile Responsive Adjustments === */
+
 @media (max-width: 768px) {
+
   .start-screen {
     margin: 1.5rem auto;
     padding: 1.5rem;
@@ -599,7 +601,7 @@ body {
   .container {
     max-width: 100%;
     margin: 0.5rem 0 1.5rem;
-    padding: 1.5rem; /* Adjust padding for smaller screens */
+    padding: 1.5rem;
   }
 
   .headline-title {
@@ -607,15 +609,15 @@ body {
     letter-spacing: 0.03rem;
   }
 
- .headline-header {
-  font-size: 0.85rem;
-  padding-bottom: 0.4rem;
-  margin-bottom: 0.8rem;
-  flex-direction: row; /* Keep it in a row */
-  justify-content: flex-end; /* Push content to right */
-  align-items: flex-start; /* Align to top */
-  text-align: right;
-}
+  .headline-header {
+    font-size: 0.85rem;
+    padding-bottom: 0.4rem;
+    margin-bottom: 0.8rem;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-start;
+    text-align: right;
+  }
 
   .info-bar {
     flex-direction: column;
@@ -623,18 +625,18 @@ body {
     gap: 1rem;
     font-size: 1rem;
     margin-bottom: 0.5rem;
-display: flex;
-align-items:center;
-user-select:none
+    display: flex;
+    align-items: center;
+    user-select: none;
   }
 
   .content,
   .content-box {
-    padding: 1rem; /* Reduced padding for content areas */
+    padding: 1rem;
   }
 
   .headline-box {
-    max-width: 100%; /* Ensure it takes full width */
+    max-width: 100%;
   }
 
   .news-image {
@@ -652,8 +654,6 @@ user-select:none
     font-size: 0.9rem;
     padding: 0.3rem 0.6rem;
   }
-
-
 
   .submit-btn {
     width: 100%;
@@ -700,7 +700,6 @@ user-select:none
   }
 }
 
-/* Extra small screens (e.g., phones in portrait) */
 @media (max-width: 480px) {
   .start-screen {
     margin: 1rem auto;
@@ -722,29 +721,33 @@ user-select:none
   .container {
     padding: 1rem;
   }
- .headline-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  font-size: 0.85rem;
-  padding-bottom: 0.4rem;
-  margin-bottom: 0.8rem;
-  border-bottom: 2px solid #000; /* optional, for the underline effect */
-}
+
+  .headline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-size: 0.85rem;
+    padding-bottom: 0.4rem;
+    margin-bottom: 0.8rem;
+    border-bottom: 2px solid #000;
+  }
+
   .headline-title {
     font-size: 1.8rem;
   }
 
- .info-bar {
-  font-size: 0.9rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem; /* optional spacing between columns */
-}
-.info-bar > div {
-  flex: 1 1 45%; /* Each child takes up ~50% width */
-  min-width: 200px; /* optional, for responsiveness */
-}
+  .info-bar {
+    font-size: 0.9rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .info-bar > div {
+    flex: 1 1 45%;
+    min-width: 200px;
+  }
+
   .headline-text {
     font-size: 0.95rem;
   }
@@ -755,13 +758,17 @@ user-select:none
   }
 
   .options {
-    gap: 0.8rem;
+    gap: 1rem;
+    justify-content: center;
   }
 
   .option-btn {
-    flex: 1 1 calc(50% - 0.4rem);
+    flex: 1 1 45%;
     padding: 0.5rem 0.8rem;
     font-size: 0.9rem;
+    min-width: auto;
+    max-width: 45%;
+    box-sizing: border-box;
   }
 
   .submit-btn {
@@ -792,14 +799,12 @@ user-select:none
   }
 }
 
-/* Specific adjustments for very small options buttons if needed */
 @media (max-width: 360px) {
   .option-btn {
     font-size: 0.85rem;
     padding: 0.4rem 0.6rem;
   }
 }
-/* Add these at the bottom of your App.css */
 
 @media (max-width: 768px) {
   .container {
@@ -839,39 +844,6 @@ user-select:none
   .headline-box {
     width: 100%;
   }
-
- /* .options {
-  color: #ffffff;
-  max-width: 480px;
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.6rem;
-  margin-bottom: 1rem;
-  justify-content: center;
-}
-
-.option-btn {
-  flex: 1 1 45%;
-  min-width: 203px;
-  text-align: center;
-  background-color: #673318;
-  border: 2px solid #000000;
-  border-radius: 12px;
-  padding: 0.7rem 1.2rem;
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: #ffffff;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  user-select: none;
- 
-}
-@media (max-width: 500px) {
-  .option-btn {
-    flex: 0 0 100%;
-  }
-} */
 
   .submit-container {
     text-align: center;
@@ -916,26 +888,10 @@ user-select:none
     padding-left: 20px;
     text-align: left;
   }
-  /* Responsive layout for option buttons on mobile */
-@media (max-width: 600px) {
-  .options {
-    flex-wrap: wrap;       /* Allows buttons to wrap */
-    justify-content: center;
-    gap: 1rem;             /* Space between buttons */
-  }
-
-  .option-btn {
-    flex: 1 1 45%;         /* Each button takes about 45% width */
-    min-width: auto;       /* Override min-width if set before */
-    max-width: 45%;        /* Restrict max width for columns */
-    box-sizing: border-box;
-  }
 }
 
-}
+/* ✅ OUTSIDE media query — main .options layout */
 
-
-/* ✅ OUTSIDE media query */
 .options {
   color: #ffffff;
   max-width: 480px;
