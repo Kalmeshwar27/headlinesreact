@@ -33,7 +33,7 @@ const questionsData = [
     options: ["Berkshire Hathaway", "Apple", "Amazon", "Tesla"],
     info: "Warren Buffett announced that he would step down from Berkshire Hathaway, the company he led for decades.",
     readMore:
-      "https://www.news9live.com/business/markets/stock-market-on-march-4-2025-sensex-nifty-updates-2830179",
+      "https://www.bbc.com/news/articles/cqj4nev7p70o",
     attempted: false,
     correct: false,
   },
