@@ -17,8 +17,8 @@ const questionsData = [
     image: trumpImage,
     sentence:
       'Donald Trump said he would be "very <span id="blank">__</span>" in negotiations with China.',
-    correctAnswer: "tough",
-    options: ["friendly", "tough", "soft", "diplomatic"],
+    correctAnswer: "nice",
+    options: ["friendly", "nice", "soft", "diplomatic"],
     info: "Donald Trump stated he plans to approach trade negotiations with China in a more cooperative manner. He emphasized being very nice during future talks to ease tensions.",
     readMore:
       "https://www.cnbctv18.com/world/trump-says-he-will-be-very-nice-to-china-in-trade-talks-ws-l-19592769.htm",
