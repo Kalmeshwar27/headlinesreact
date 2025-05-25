@@ -863,8 +863,10 @@ user-select:none
   }
 
   .option-btn {
-    flex: 1 1 45%;
-  min-width: 203px;
+   flex: 0 0 48%;  /* Forces each button to take about half the row */
+  box-sizing: border-box;
+  min-width: unset;  /* Optional: remove the 203px min-width */
+  max-width: 100%;
   text-align: center;
   background-color: #673318;
   border: 2px solid #000000;
@@ -878,6 +880,11 @@ user-select:none
   user-select: none;
 
   }
+@media (max-width: 500px) {
+  .option-btn {
+    flex: 0 0 100%;
+  }
+}
 
   .submit-container {
     text-align: center;
