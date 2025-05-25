@@ -916,6 +916,22 @@ user-select:none
     padding-left: 20px;
     text-align: left;
   }
+  /* Responsive layout for option buttons on mobile */
+@media (max-width: 600px) {
+  .options {
+    flex-wrap: wrap;       /* Allows buttons to wrap */
+    justify-content: center;
+    gap: 1rem;             /* Space between buttons */
+  }
+
+  .option-btn {
+    flex: 1 1 45%;         /* Each button takes about 45% width */
+    min-width: auto;       /* Override min-width if set before */
+    max-width: 45%;        /* Restrict max width for columns */
+    box-sizing: border-box;
+  }
+}
+
 }
 
 
