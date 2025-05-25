@@ -358,14 +358,11 @@ body {
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
   user-select: none;
-  transform: skew(-20deg); /* Make it slanted like a parallelogram */
+ 
 }
 
 /* Unskew the inner text */
-.option-btn span {
-  display: inline-block;
-  transform: skew(20deg);
-}
+
 
 .option-btn:hover:not(:disabled) {
   background-color: #000000;
@@ -410,14 +407,9 @@ body {
   cursor: pointer;
   transition: all 0.3s ease;
   user-select: none;
-  transform: skew(-20deg); /* Make it slanted like a parallelogram */
+
 }
 
-/* Unskew the inner text */
-.submit-btn span {
-  display: inline-block;
-  transform: skew(20deg);
-}
 
 .submit-btn:disabled {
   opacity: 0.5;
@@ -615,13 +607,15 @@ body {
     letter-spacing: 0.03rem;
   }
 
-  .headline-header {
-    font-size: 0.85rem;
-    padding-bottom: 0.4rem;
-    margin-bottom: 0.8rem;
-    flex-direction: column; /* Stack elements on smaller screens */
-    align-items: center;
-  }
+ .headline-header {
+  font-size: 0.85rem;
+  padding-bottom: 0.4rem;
+  margin-bottom: 0.8rem;
+  flex-direction: row; /* Keep it in a row */
+  justify-content: flex-end; /* Push content to right */
+  align-items: flex-start; /* Align to top */
+  text-align: right;
+}
 
   .info-bar {
     flex-direction: column;
