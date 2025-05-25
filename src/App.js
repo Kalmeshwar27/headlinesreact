@@ -221,9 +221,9 @@ function App() {
                 __html: submitted || current.attempted ? filledSentence : current.sentence,
               }}
             />
-            <button className="speak-btn" onClick={speakHeadline}>
+            {/* <button className="speak-btn" onClick={speakHeadline}>
               🔊 Speak Headline
-            </button>
+            </button> */}
 
             <div className="options">
               {current.options.map((option) => {

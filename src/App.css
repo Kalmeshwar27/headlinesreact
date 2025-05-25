@@ -309,7 +309,7 @@ body {
 }
 
 /* Speak Button */
-.speak-btn {
+/* .speak-btn {
   background-color: #444;
   border: none;
   border-radius: 12px;
@@ -330,7 +330,7 @@ body {
 .speak-btn:focus {
   outline: 2px solid #2980b9;
   outline-offset: 2px;
-}
+} */
 
 /* Options */
 .options {
