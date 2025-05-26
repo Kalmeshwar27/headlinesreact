@@ -176,8 +176,8 @@ useEffect(() => {
   if (!started) {
     return (
       <div className="start-screen">
+        <h1>Instructions for Headlines</h1>
         <div className="instructions">
-           <h1>Instructions for Headlines</h1>
            <div className="start-box">
           <ul>
             <li>Complete the Headline with the right word based on recent news.</li>
