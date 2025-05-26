@@ -72,7 +72,7 @@ body {
   width: 100%;
   max-width: 350px;
   padding: 2rem;
-  background-image: url('./assets/images/box3.png');
+  background-image: url('./assets/images/box2.png');
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -680,7 +680,7 @@ body {
   }
 
   .instructions li {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 
   .container {
@@ -802,7 +802,7 @@ body {
   }
 
   .instructions li {
-    font-size: 1.5rem;
+    font-size: 0.9rem;
   }
 
   .container {
