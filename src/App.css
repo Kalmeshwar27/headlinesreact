@@ -780,10 +780,12 @@ body {
 }
 
 @media (max-width: 480px) {
+  @media(max-width: 400px) {
   .start-screen {
     margin: 1rem auto;
     padding: 1rem;
   }
+}
 
   .start-screen h1 {
     font-size: 1.8rem;
