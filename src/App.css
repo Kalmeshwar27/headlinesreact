@@ -936,15 +936,11 @@ body {
   }
 
   .nav-buttons {
- position: fixed;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  z-index: 1000;
-  inset-inline-start: var(--side, auto);
-  inset-inline-end: var(--side-end, auto);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    margin-top: 15px;
   }
 
   .nav-buttons button {
