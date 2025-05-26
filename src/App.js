@@ -163,28 +163,31 @@ function App() {
   if (!started) {
     return (
       <div className="start-screen">
-        <h1>The Headlines Game</h1>
         <div className="instructions">
           <h2>How to Play</h2>
+           <div className="start-box">
           <ul>
-            <li>🔊 Listen to the headline.</li>
-            <li>🤔 Choose the correct word to complete it.</li>
-            <li>⏳ You have 20 seconds per question.</li>
-            <li>✅ Get instant feedback.</li>
-            <li>🏁 See your score at the end.</li>
+            <li>Listen to the headline.</li>
+            <li>Choose the correct word to complete it.</li>
+            <li>You have 20 seconds per question.</li>
+            <li>Get instant feedback.</li>
+            <li>See your score at the end.</li>
           </ul>
+        </div>
         </div>
         <p>Test your knowledge with breaking news headlines!</p>
         <button className="button-85" onClick={handleStart}>
           ▶️ Start Game
         </button>
       </div>
+  
     );
   }
 
   if (gameOver) {
     return (
       <div className="game-over-screen">
+      <div class="game-over-box">
         <h1 className="game-over-text">🎉 Game Over 🎉</h1>
         <p className="final-score">
           You scored: {score} / {questions.length}
@@ -192,6 +195,7 @@ function App() {
         <button className="button-85" onClick={handleRestart}>
           🔁 Restart Game
         </button>
+      </div>
       </div>
     );
   }
