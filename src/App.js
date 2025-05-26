@@ -66,6 +66,19 @@ function App() {
     const timer = setTimeout(() => setTimeLeft(timeLeft - 1), 1000);
     return () => clearTimeout(timer);
   }, [timeLeft, submitted, gameOver, started, current.attempted]);
+useEffect(() => {
+  const script = document.createElement("script");
+  script.async = true;
+  script.src = `https://www.googletagmanager.com/gtag/js?id=G-W8RVWT5WEP`; // Replace with your GA4 Measurement ID
+  document.head.appendChild(script);
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    window.dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "G-XXXXXXXXXX"); // Replace with your GA4 Measurement ID
+}, []);
 
   const handleStart = () => {
     startAudio.play();
