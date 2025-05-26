@@ -885,7 +885,7 @@ body {
   }
 }
 
-@media (max-width: 748px) {
+@media (max-width: 708px) {
   .container {
     padding: 10px;
   }
