@@ -70,9 +70,9 @@ body {
 .start-box {
   align-content: center;
   width: 100%;
-  max-width: 370px;
+  max-width: 350px;
   padding: 2rem;
-  background-image: url('./assets/images/box2.png');
+  background-image: url('./assets/images/box3.png');
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -97,7 +97,7 @@ body {
 .start-screen p {
   color: black;
   background: image(u);
-  font-size: 1.0rem;
+  font-size: 1.1rem;
   margin: 0.40rem 0;
 }
 
@@ -144,7 +144,7 @@ body {
 
 .instructions li {
   margin-bottom: 0.50rem;
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   color: #eee;
   animation: fadeInUp 0.4s ease forwards;
   opacity: 0;

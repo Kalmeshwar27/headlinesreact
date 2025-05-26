@@ -16,24 +16,24 @@ const questionsData = [
   {
     image: trumpImage,
     sentence:
-      'Donald Trump said he would be "very <span id="blank">__</span>" in negotiations with China.',
-    correctAnswer: "nice",
-    options: ["tough", "nice", "harsh", "mild"],
-    info: "Donald Trump stated he plans to approach trade negotiations with China in a more cooperative manner. He emphasized being very nice during future talks to ease tensions.",
+      'Trump says Putin has "gone absolutely"<span id="blank">__</span>"',
+    correctAnswer: "Crazy",
+    options: ["Insane", "Crazy", "Viral", "Sane"],
+    info: "Trump's reaction came after Russia's largest aerial attack on Ukraine.",
     readMore:
-      "https://www.cnbctv18.com/world/trump-says-he-will-be-very-nice-to-china-in-trade-talks-ws-l-19592769.htm",
+      "https://www.hindustantimes.com/world-news/us-news/trump-says-putin-has-gone-absolutely-crazy-considering-more-sanctions-on-russia-101748243693554.html",
     attempted: false,
     correct: false,
   },
   {
-    image: berkshireImage,
+    image: trumpImage,
     sentence:
-      'Warren Buffett announced he will step down as CEO of <span id="blank">__</span> by year-end.',
-    correctAnswer: "Berkshire Hathaway",
-    options: ["Berkshire Hathaway", "Apple", "Amazon", "Tesla"],
-    info: "Warren Buffett announced that he would step down from Berkshire Hathaway, the company he led for decades.",
+      'White House says Trump was <span id="blank">__</span> with the progress in resolving the Ukraine conflict.',
+    correctAnswer: "frustrated",
+    options: ["happy", "frustrated", "unbothered", "pleased"],
+    info: "Trump has been pushing for direct talks between Russia and Ukraine.",
     readMore:
-      "https://www.bbc.com/news/articles/cqj4nev7p70o",
+      "https://www.hindustantimes.com/world-news/trump-pushes-for-direct-talks-with-putin-amid-russia-ukraine-peace-efforts-101747389991792.html",
     attempted: false,
     correct: false,
   },
@@ -176,15 +176,12 @@ useEffect(() => {
   if (!started) {
     return (
       <div className="start-screen">
+        <h1>Instructions for Headlines</h1>
         <div className="instructions">
-          <h2>How to Play</h2>
            <div className="start-box">
           <ul>
-            <li>Listen to the headline.</li>
-            <li>Choose the correct word to complete it.</li>
-            <li>You have 20 seconds per question.</li>
-            <li>Get instant feedback.</li>
-            <li>See your score at the end.</li>
+            <li>Complete the Headline with the right word based on recent news.</li>
+            <li>You have 20 seconds for each question.</li>
           </ul>
         </div>
         </div>
