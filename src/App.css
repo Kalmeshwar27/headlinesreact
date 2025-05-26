@@ -68,7 +68,8 @@ body {
   backdrop-filter: blur(2px); /* Optional: adds a slight blur to make text pop */
 }
 .start-box {
-  width: 90%;
+  align-content: center;
+  width: 100%;
   max-width: 370px;
   padding: 2rem;
   background-image: url('./assets/images/box2.png');
@@ -209,8 +210,8 @@ body {
 /* Container */
 .container {
   width: 100%;
-  max-width: 650px;
-  background: url('./assets/images/bg4.jpg') no-repeat center center;
+  max-width: 500px;
+  background: url('./assets/images/bg6.jpg') no-repeat center center;
   background-size: cover;
   border-radius: 12px;
   padding: 30px 25px 40px;
@@ -227,7 +228,7 @@ body {
 .headline-title {
   font-family: "Georgia", serif;
   font-weight: 700;
-  font-size: 3.5rem;
+  font-size: 3.3rem;
   text-align: center;
   margin-bottom: 0;
   letter-spacing: 0.1rem;
@@ -347,7 +348,7 @@ body {
 /* Options */
 .options {
   color: #ffffff;
-  max-width: 480px;
+  max-width: 280px;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -358,7 +359,7 @@ body {
 
 .option-btn {
   flex: 1 1 45%;
-  min-width: 203px;
+  min-width: 103px;
   text-align: center;
   background-color: #312313;
   border: 2px solid #000000;
@@ -683,7 +684,7 @@ body {
   }
 
   .headline-title {
-    font-size: 2.2rem;
+    font-size: 1.rem;
     letter-spacing: 0.03rem;
   }
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import trumpImage from "./assets/images/trump-speech.jpg";
-import berkshireImage from "./assets/images/berkshire.jpg";
+import berkshireImage from "./assets/images/1.jpg";
 import startSound from "./assets/sounds/start.mp3";
 import correctSound from "./assets/sounds/correct.mp3";
 import wrongSound from "./assets/sounds/wrong.mp3";
@@ -18,7 +18,7 @@ const questionsData = [
     sentence:
       'Donald Trump said he would be "very <span id="blank">__</span>" in negotiations with China.',
     correctAnswer: "nice",
-    options: ["friendly", "nice", "soft", "diplomatic"],
+    options: ["tough", "nice", "harsh", "mild"],
     info: "Donald Trump stated he plans to approach trade negotiations with China in a more cooperative manner. He emphasized being very nice during future talks to ease tensions.",
     readMore:
       "https://www.cnbctv18.com/world/trump-says-he-will-be-very-nice-to-china-in-trade-talks-ws-l-19592769.htm",
@@ -217,7 +217,7 @@ useEffect(() => {
   return (
     <div className="container">
       <div className="content-box">
-        <h1 className="headline-title">The Headlines</h1>
+        <h3 className="headline-title">The Headlines</h3>
         <div className="headline-header">
           <div>Business</div>
           <div>May 2025</div>
