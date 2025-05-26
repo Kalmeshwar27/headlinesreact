@@ -70,13 +70,12 @@ body {
 .start-box {
   align-content: center;
   width: 100%;
-  max-width: 350px;
+  max-width: 370px;
   padding: 2rem;
   background-image: url('./assets/images/box2.png');
-  background-size: contain;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -139,7 +138,7 @@ body {
 }
 
 .instructions ul {
-  padding-left: 1.5rem;
+  padding-left: 0.5rem;
 }
 
 .instructions li {
