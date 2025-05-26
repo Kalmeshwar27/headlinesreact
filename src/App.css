@@ -779,7 +779,7 @@ body {
   }
 }
 
-@media (max-width: 300px) {
+@media (max-width: 480px) {
   .start-screen {
     margin: 1rem auto;
     padding: 1rem;
