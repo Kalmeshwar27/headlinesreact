@@ -1002,3 +1002,9 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+@media (max-width: 300px) {
+  .start-screen {
+    margin: 1.5rem auto;
+    padding: 1.5rem;
+  }
+}
