@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import trumpImage from "./assets/images/trump-speech.jpg";
-import berkshireImage from "./assets/images/1.jpg";
+import berkshireImage from "./assets/images/berkshire.jpg";
 import startSound from "./assets/sounds/start.mp3";
 import correctSound from "./assets/sounds/correct.mp3";
 import wrongSound from "./assets/sounds/wrong.mp3";
