@@ -9,7 +9,7 @@ const Home = () => {
       <h1>📰 News Headline Game</h1>
       <p>Fill in the blanks in real news headlines!</p>
       <Link to="/game">
-        <button className="button-85">▶️ Start Game</button>
+        <button className="button-85">▶️ Start</button>
       </Link>
     </div>
   );
