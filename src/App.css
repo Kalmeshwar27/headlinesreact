@@ -47,15 +47,15 @@ body {
 
 /* Start Screen */
 .start-screen {
-  height: 70vh;
-  max-width: 500px;
+  height: 60vh;
+  max-width: 450px;
   margin: 3rem auto;
   text-align: center;
   padding: 2rem;
   background-image: url('./assets/images/bg5.jpg');
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat; 
+  background-repeat: no-repeat;
   color: rgb(0, 0, 0);
   border-radius: 12px;
   border: 3px solid rgba(0, 0, 0, 0.7); /* ✨ Elegant border */
@@ -65,7 +65,12 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 95vh;
-  backdrop-filter: blur(2px); /* Optional: adds a slight blur to make text pop */
+  backdrop-filter: blur(2px);
+  position: relative;
+  z-index: 999;
+  animation: fadeScaleIn 0.8s ease forwards;
+  transform: scale(0.9);
+  opacity: 0;
 }
 .start-box {
   align-content: center;
