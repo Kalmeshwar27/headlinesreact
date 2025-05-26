@@ -176,7 +176,7 @@ useEffect(() => {
   if (!started) {
     return (
       <div className="start-screen">
-        <h1>Instructions for Headlines</h1>
+        <h1>Instructions</h1>
         <div className="instructions">
            <div className="start-box">
           <ul>
