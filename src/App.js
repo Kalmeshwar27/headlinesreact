@@ -192,11 +192,12 @@ function App() {
         <p className="final-score">
           You scored: {score} / {questions.length}
         </p>
+        </div>
         <button className="button-85" onClick={handleRestart}>
           🔁 Restart Game
         </button>
       </div>
-      </div>
+    
     );
   }
 

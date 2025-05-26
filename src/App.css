@@ -144,6 +144,7 @@ body {
 .instructions li {
   margin-bottom: 0.50rem;
   font-size: 1.3rem;
+  color: #eee;
   animation: fadeInUp 0.4s ease forwards;
   opacity: 0;
 }
@@ -503,23 +504,27 @@ body {
 
 /* Game Over Screen */
 .game-over-screen {
-background-image: url('./assets/images/bg5.jpg'); /* Check if this is correct */
-  background-size: contain;
+ height: 70vh;
+  max-width: 500px;
+  margin: 3rem auto;
+  text-align: center;
+  padding: 2rem;
+  background-image: url('./assets/images/bg5.jpg');
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 90vh;
-  background-color: rgba(255, 255, 255, 0.8);
+  color: rgb(255, 255, 255);
+  border-radius: 12px;
+  border: 3px solid rgba(0, 0, 0, 0.7); /* ✨ Elegant border */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-height: 95vh;
+  backdrop-filter: blur(2px);
+  position: relative;
   z-index: 999;
-  text-align: center;
-  padding: 20px;
-  flex-direction: column;
   animation: fadeScaleIn 0.8s ease forwards;
   transform: scale(0.9);
   opacity: 0;
