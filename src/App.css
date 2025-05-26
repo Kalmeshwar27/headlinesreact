@@ -659,7 +659,14 @@ body {
 /* === Mobile Responsive Adjustments === */
 
 @media (max-width: 768px) {
-
+@media(max-width: 300px) {
+  .start-screen {
+    margin: 1.5rem auto;
+    padding: 1.5rem;
+  }
+}
+  
+}
   .start-screen {
     margin: 1.5rem auto;
     padding: 1.5rem;
