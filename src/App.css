@@ -48,6 +48,7 @@ body {
 /* Start Screen */
 .start-screen {
   height: 60vh;
+  width: 100%;
   max-width: 500px;
   margin: 3rem auto;
   text-align: center;
@@ -514,6 +515,7 @@ body {
 /* Game Over Screen */
 .game-over-screen {
  height: 70vh;
+ width: 100%;
   max-width: 500px;
   margin: 3rem auto;
   text-align: center;
