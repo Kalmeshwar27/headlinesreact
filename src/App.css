@@ -227,6 +227,10 @@ body {
   user-select: none;
   display: flex;
   flex-direction: column;
+   border: 3px solid #0b0b0b;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 4px 4px 0 #aaa;
 }
 
 .headline-title {
@@ -294,11 +298,11 @@ body {
   user-select: none;
 }
 
-.dark-mode .headline-box {
+/* .dark-mode .headline-box {
   background: #222;
   border-color: #555;
   box-shadow: 4px 4px 0 #555;
-}
+} */
 
 /* Headline Text */
 .headline-text {
@@ -625,10 +629,10 @@ body {
   background-size: cover; /* Use cover for content-box as well */
   max-width: 700px;
   width: 100%;
-  border: 3px solid #222;
+  /* border: 3px solid #423b36; */
   border-radius: 12px;
   padding: 1.5rem;
-  box-shadow: 4px 4px 0 #aaa;
+  /* box-shadow: 4px 4px 0 #aaa; */
   user-select: none;
   margin: 1rem auto;
   transition: background 0.3s ease, border-color 0.3s ease;
