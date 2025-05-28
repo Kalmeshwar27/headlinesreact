@@ -696,7 +696,7 @@ body {
   user-select: none;
   display: flex;
   justify-content: center;
-  margin-left: 5.0rem; /* add space from the content above if needed */
+  margin-left: 4.5rem; /* add space from the content above if needed */
   }
 
   .status-bar {

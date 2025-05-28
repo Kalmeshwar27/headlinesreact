@@ -204,7 +204,7 @@ function App() {
 
         <div className="info-bar">
           <span>Score: {score}</span>
-          <span>Time Left: {timeLeft}s</span>
+          <span>Time: {timeLeft}s</span>
         </div>
 
         <div className="content">
