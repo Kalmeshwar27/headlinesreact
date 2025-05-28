@@ -257,12 +257,6 @@ function App() {
                   <button onClick={nextQuestion}>
                     {currentQ === questions.length - 1 ? "Finish" : "Next"}
                   </button>
-                  {/* <button onClick={previousQuestion} disabled={currentQ === 0}>
-                    ◀️ Previous
-                  </button> */}
-                  {/* <button onClick={nextQuestion}>
-                    {currentQ === questions.length - 1 ? "🏁 Finish" : "Next ▶️"}
-                  </button> */}
                 </div>
               </>
             )}
