@@ -263,11 +263,12 @@ body {
 
 /* News Image */
 .news-image {
-  width: 100%;
+  width: 110%;
   max-width: 580px;
   height: auto;
   object-fit: cover;
   user-select: none;
+  margin-top: -15px; /* adjust value as needed */
 }
 
 /* Headline Box */
@@ -565,7 +566,7 @@ body {
 }
 
 .image-frame {
-  width: 100%;
+  width: 120%;
   /* increase max-width as needed */
   aspect-ratio: 3 / 2;
   margin: 20px 0;
@@ -648,7 +649,7 @@ body {
   }
 
   .headline-text {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 
   .speak-btn {
