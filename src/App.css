@@ -607,7 +607,7 @@ body {
     background: image(url('./assets/images/bg7.jpg'));
     background-size: contain;
    width: 100%;
-    max-width: 350px;
+    max-width: 340px;
     border: 2px solid #000;
     margin: 1rem auto;
     padding: 1rem;
@@ -628,7 +628,7 @@ body {
   .container {
     padding: 1rem;
     width: 100%;
-    max-width: 400px;
+    max-width: 360px;
   }
 
   .headline-header {
@@ -697,7 +697,11 @@ body {
   .game-over h2 {
     font-size: 1.8rem;
   }
-
+.game-over-screen {
+    padding: 1rem;
+    width: 100%;
+    max-width: 360px;
+  }
   .game-over p {
     font-size: 1rem;
   }
