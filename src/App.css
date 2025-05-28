@@ -605,7 +605,7 @@ body {
 @media (max-width: 450px) {
   .start-screen {
     background-image: url('./assets/images/bg7.jpg');
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     width: 100%;
@@ -630,7 +630,7 @@ body {
   .container {
     padding: 1rem;
     width: 100%;
-    max-width: 360px;
+    max-width: 350px;
   }
 
   .headline-header {
@@ -700,9 +700,15 @@ body {
   }
 
   .game-over-screen {
-    padding: 1rem;
+   background-image: url('./assets/images/bg7.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     width: 100%;
-    max-width: 360px;
+    max-width: 340px;
+    border: 2px solid #000;
+    margin: 1rem auto;
+    padding: 1rem;
   }
 
   .game-over p {
