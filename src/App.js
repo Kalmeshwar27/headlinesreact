@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import trumpImage from "./assets/images/trump-speech.jpg";
+import trumpImage from "./assets/images/trump-speech1.jpg";
 import berkshireImage from "./assets/images/berkshire.jpg";
 import startSound from "./assets/sounds/start.mp3";
 import correctSound from "./assets/sounds/correct.mp3";
@@ -60,52 +60,51 @@ function App() {
   useEffect(() => {
     if (submitted || gameOver || !started || current.attempted) return;
     if (timeLeft === 0) {
-      handleSubmit(true);
+      handleAutoSubmit();
       return;
     }
-    const timer = setTimeout(() => setTimeLeft(timeLeft - 1), 1000);
+    const timer = setTimeout(() => setTimeLeft((t) => t - 1), 1000);
     return () => clearTimeout(timer);
   }, [timeLeft, submitted, gameOver, started, current.attempted]);
-useEffect(() => {
-  const script = document.createElement("script");
-  script.async = true;
-  script.src = `https://www.googletagmanager.com/gtag/js?id=G-W8RVWT5WEP`; // GA4 Measurement ID
-  document.head.appendChild(script);
-
-  window.dataLayer = window.dataLayer || [];
-  function gtag() {
-    window.dataLayer.push(arguments);
-  }
-  gtag("js", new Date());
-  gtag("config", "G-XXXXXXXXXX"); // Replace with your GA4 Measurement ID
-}, []);
 
   const handleStart = () => {
     startAudio.play();
     setStarted(true);
   };
 
-  const handleSubmit = (isTimeout = false) => {
-    const isCorrect = selected === current.correctAnswer;
-
+  const handleAutoSubmit = () => {
     const updatedQuestions = [...questions];
     const updatedQ = { ...updatedQuestions[currentQ] };
 
-    if (!updatedQ.attempted) {
-      updatedQ.attempted = true;
-      updatedQ.correct = isCorrect;
+    updatedQ.attempted = true;
+    updatedQ.correct = false;
 
-      if (isCorrect) {
-        correctAudio.play();
-        setScore((score) => score + 1);
-      } else {
-        wrongAudio.play();
-      }
+    updatedQuestions[currentQ] = updatedQ;
+    wrongAudio.play();
+    setQuestions(updatedQuestions);
+    setSubmitted(true);
+  };
 
-      updatedQuestions[currentQ] = updatedQ;
-      setQuestions(updatedQuestions);
+  const handleSubmit = (selectedOption) => {
+    if (submitted || current.attempted) return;
+
+    const isCorrect = selectedOption === current.correctAnswer;
+    const updatedQuestions = [...questions];
+    const updatedQ = { ...updatedQuestions[currentQ] };
+
+    updatedQ.attempted = true;
+    updatedQ.correct = isCorrect;
+
+    if (isCorrect) {
+      correctAudio.play();
+      setScore((s) => s + 1);
+    } else {
+      wrongAudio.play();
     }
 
+    updatedQuestions[currentQ] = updatedQ;
+    setQuestions(updatedQuestions);
+    setSelected(selectedOption);
     setSubmitted(true);
   };
 
@@ -137,24 +136,8 @@ useEffect(() => {
     `<span id="blank" class="correct">${current.correctAnswer}</span>`
   );
 
-  const speakHeadline = () => {
-    let sentenceText;
-
-    if (submitted || current.attempted) {
-      sentenceText = current.sentence
-        .replace(/<[^>]+>/g, "")
-        .replace("_____", current.correctAnswer);
-    } else {
-      sentenceText = current.sentence.replace(/<[^>]+>/g, "").replace("_____", "blank");
-    }
-
-    const utterance = new SpeechSynthesisUtterance(sentenceText);
-    utterance.lang = "en-US";
-    speechSynthesis.speak(utterance);
-  };
-
   const handleRestart = () => {
-    setQuestions(questionsData);
+    setQuestions(questionsData.map((q) => ({ ...q, attempted: false, correct: false })));
     setScore(0);
     setGameOver(false);
     setCurrentQ(0);
@@ -177,8 +160,8 @@ useEffect(() => {
     return (
       <div className="start-screen">
         <h1>Instructions</h1>
+        <div className="start-box">
         <div className="instructions">
-           <div className="start-box">
           <ul>
             <li>Complete the Headline with the right word based on recent news.</li>
             <li>You have 20 seconds for each question.</li>
@@ -190,24 +173,23 @@ useEffect(() => {
           ▶️ Start Game
         </button>
       </div>
-  
+    
     );
   }
 
   if (gameOver) {
     return (
       <div className="game-over-screen">
-      <div class="game-over-box">
-        <h1 className="game-over-text">🎉 Game Over 🎉</h1>
-        <p className="final-score">
-          You scored: {score} / {questions.length}
-        </p>
+        <div className="game-over-box">
+          <h1 className="game-over-text">🎉 Game Over 🎉</h1>
+          <p className="final-score">
+            You scored: {score} / {questions.length}
+          </p>
         </div>
         <button className="button-85" onClick={handleRestart}>
           🔁 Restart Game
         </button>
       </div>
-    
     );
   }
 
@@ -236,45 +218,30 @@ useEffect(() => {
                 __html: submitted || current.attempted ? filledSentence : current.sentence,
               }}
             />
-            {/* <button className="speak-btn" onClick={speakHeadline}>
-              🔊 Speak Headline
-            </button> */}
 
             <div className="options">
               {current.options.map((option) => {
                 const isSelected = selected === option;
                 const isCorrect = submitted && option === current.correctAnswer;
-                const isWrong = submitted && isSelected && option !== current.correctAnswer;
+                const isWrong = submitted && isSelected && !isCorrect;
 
                 let className = "option-btn";
                 if (submitted || current.attempted) {
                   if (isCorrect) className += " correct";
                   else if (isWrong) className += " wrong";
-                } else if (isSelected) {
-                  className += " selected";
                 }
 
                 return (
                   <button
                     key={option}
                     className={className}
-                    onClick={() => !submitted && setSelected(option)}
+                    onClick={() => handleSubmit(option)}
                     disabled={submitted || current.attempted}
                   >
                     {option}
                   </button>
                 );
               })}
-            </div>
-
-            <div className="submit-container">
-              <button
-                className="submit-btn"
-                onClick={() => handleSubmit(false)}
-                disabled={!selected || submitted || current.attempted}
-              >
-                Submit
-              </button>
             </div>
 
             {(submitted || current.attempted) && (
@@ -287,12 +254,15 @@ useEffect(() => {
                 </div>
 
                 <div className="nav-buttons">
-                  <button onClick={previousQuestion} disabled={currentQ === 0}>
-                    ◀️ Previous
-                  </button>
                   <button onClick={nextQuestion}>
-                    {currentQ + 1 === questions.length ? "Finish ▶️" : "Next ▶️"}
+                    {currentQ === questions.length - 1 ? "🏁 Finish" : "Next ▶️"}
                   </button>
+                  {/* <button onClick={previousQuestion} disabled={currentQ === 0}>
+                    ◀️ Previous
+                  </button> */}
+                  {/* <button onClick={nextQuestion}>
+                    {currentQ === questions.length - 1 ? "🏁 Finish" : "Next ▶️"}
+                  </button> */}
                 </div>
               </>
             )}

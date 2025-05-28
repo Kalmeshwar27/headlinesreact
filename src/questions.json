@@ -1,0 +1,26 @@
+{
+  "instructions": [
+    "🧠 Test your awareness of recent news headlines.",
+    "⏳ Each question has a 20-second timer.",
+    "✅ Pick the best word to complete the headline.",
+    "🎯 Learn facts with each question and improve your knowledge."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "sentence": "Trump says Putin has 'gone absolutely' __",
+      "correctAnswer": "Crazy",
+      "options": ["Insane", "Crazy", "Viral", "Sane"],
+      "info": "Trump reacted after Russia's major aerial attack on Ukraine.",
+      "readMore": "https://example.com/article/putin"
+    },
+    {
+      "id": 2,
+      "sentence": "India's GDP grew by __% in the first quarter of 2024.",
+      "correctAnswer": "7.8",
+      "options": ["6.2", "7.8", "5.4", "8.0"],
+      "info": "India posted strong growth, led by manufacturing and services.",
+      "readMore": "https://example.com/india-gdp"
+    }
+  ]
+}
