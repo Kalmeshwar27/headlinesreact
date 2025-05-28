@@ -604,6 +604,8 @@ body {
 
 @media (max-width: 480px) {
   .start-screen {
+    background: image(url('./assets/images/bg6.jpg'));
+    background-size: contain;
    width: 90%;
     max-width: 350px;
     border: 2px solid #000;
