@@ -669,6 +669,7 @@ body {
 
 
   .option-btn {
+  background-color: #5a4631;
   text-align: center;
   flex: 1 1 45%;
   padding: 0.5rem 0.8rem;
