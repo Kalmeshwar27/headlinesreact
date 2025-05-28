@@ -206,62 +206,70 @@ function App() {
           <span>Score: {score}</span>
           <span>Time: {timeLeft}s</span>
         </div>
+       {/* 🚀 PAGE FLIP START */}
+        <div className="flip-container">
+          <div key={currentQ} className="flipper">
+            <div className="content">
+              <div className="image-frame">
+                <img src={current.image} alt="News" className="news-image" />
+              </div>
+              <div className="headline-box">
+                <p
+                  className="headline-text"
+                  dangerouslySetInnerHTML={{
+                    __html:
+                      submitted || current.attempted
+                        ? filledSentence
+                        : current.sentence,
+                  }}
+                />
 
-        <div className="content">
-          <div className="image-frame">
-            <img src={current.image} alt="News" className="news-image" />
-          </div>
-          <div className="headline-box">
-            <p
-              className="headline-text"
-              dangerouslySetInnerHTML={{
-                __html: submitted || current.attempted ? filledSentence : current.sentence,
-              }}
-            />
+                <div className="options">
+                  {current.options.map((option) => {
+                    const isSelected = selected === option;
+                    const isCorrect = submitted && option === current.correctAnswer;
+                    const isWrong = submitted && isSelected && !isCorrect;
 
-            <div className="options">
-              {current.options.map((option) => {
-                const isSelected = selected === option;
-                const isCorrect = submitted && option === current.correctAnswer;
-                const isWrong = submitted && isSelected && !isCorrect;
+                    let className = "option-btn";
+                    if (submitted || current.attempted) {
+                      if (isCorrect) className += " correct";
+                      else if (isWrong) className += " wrong";
+                    }
 
-                let className = "option-btn";
-                if (submitted || current.attempted) {
-                  if (isCorrect) className += " correct";
-                  else if (isWrong) className += " wrong";
-                }
+                    return (
+                      <button
+                        key={option}
+                        className={className}
+                        onClick={() => handleSubmit(option)}
+                        disabled={submitted || current.attempted}
+                      >
+                        {option}
+                      </button>
+                    );
+                  })}
+                </div>
 
-                return (
-                  <button
-                    key={option}
-                    className={className}
-                    onClick={() => handleSubmit(option)}
-                    disabled={submitted || current.attempted}
-                  >
-                    {option}
-                  </button>
-                );
-              })}
+                {(submitted || current.attempted) && (
+                  <>
+                    <div className="info-text">
+                      <p>{current.info}</p>
+                      <a href={current.readMore} target="_blank" rel="noopener noreferrer">
+                        Read More
+                      </a>
+                    </div>
+
+                    <div className="nav-buttons">
+                      <button onClick={nextQuestion}>
+                        {currentQ === questions.length - 1 ? "Finish" : "Next"}
+                      </button>
+                    </div>
+                  </>
+                )}
+              </div>
             </div>
-
-            {(submitted || current.attempted) && (
-              <>
-                <div className="info-text">
-                  <p>{current.info}</p>
-                  <a href={current.readMore} target="_blank" rel="noopener noreferrer">
-                    Read More
-                  </a>
-                </div>
-
-                <div className="nav-buttons">
-                  <button onClick={nextQuestion}>
-                    {currentQ === questions.length - 1 ? "Finish" : "Next"}
-                  </button>
-                </div>
-              </>
-            )}
           </div>
         </div>
+        {/* 🚀 PAGE FLIP END */}
       </div>
     </div>
   );
