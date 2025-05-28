@@ -604,7 +604,7 @@ body {
 
 @media (max-width: 450px) {
   .start-screen {
-    background-image: url('./assets/images/bg5.jpg');
+    background-image: url('./assets/images/bg6.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -701,7 +701,7 @@ body {
   }
 
   .game-over-screen {
-   background-image: url('./assets/images/bg5.jpg');
+   background-image: url('./assets/images/bg6.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
