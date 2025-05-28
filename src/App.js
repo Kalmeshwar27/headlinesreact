@@ -16,7 +16,7 @@ const questionsData = [
   {
     image: trumpImage,
     sentence:
-      'Trump says Putin has "gone absolutely"<span id="blank">__</span>"',
+      'Trump says Putin has "gone absolutely <span id="blank">__</span>".',
     correctAnswer: "Crazy",
     options: ["Insane", "Crazy", "Viral", "Sane"],
     info: "Trump's reaction came after Russia's largest aerial attack on Ukraine.",
