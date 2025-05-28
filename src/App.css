@@ -595,7 +595,7 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     width: 100%;
-    max-width: 300px;
+    max-width: 325px;
     border: 2px solid #000;
     margin: 1rem auto;
     padding: 1rem;
@@ -670,7 +670,7 @@ body {
   flex: 1 1 45%;
   padding: 0.5rem 0.8rem;
   font-size: 0.9rem;
-  max-width: 100%;
+  max-width: 100%;/* Ensure it doesn't exceed the width */
   box-sizing: border-box;
   display: flex;               /* Add this */
   justify-content: center;     /* Add this */
@@ -713,7 +713,7 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     width: 100%;
-    max-width: 300px;
+    max-width: 325px;
     border: 2px solid #000;
     margin: 1rem auto;
     padding: 1rem;
