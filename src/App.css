@@ -93,14 +93,27 @@ body {
   transform: scale(0.9);
   opacity: 0;
 }
+.start-screen h1 {
+  font-family: "Georgia", serif;
+  font-size: 2.5rem;
+  margin-top: -5rem;
+  color: #000;
+  /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); */
+  margin-bottom: 3rem;
+  border-bottom: 2px solid #222;
+}
+.start-screen h3{
+  font-size: 1.2rem;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
 
 .start-screen p {
-  color: black;
+  color: rgb(255, 255, 255);
   background: image(u);
   font-size: 1.1rem;
   margin: 0.40rem 0;
 }
-
 .start-button {
   flex: 1 1 45%;
   min-width: 203px;
@@ -566,7 +579,7 @@ body {
 }
 
 .image-frame {
-  width: 120%;
+  width: 110%;
   /* increase max-width as needed */
   aspect-ratio: 3 / 2;
   margin: 20px 0;
@@ -649,7 +662,7 @@ body {
   }
 
   .headline-text {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 
   .speak-btn {

@@ -159,8 +159,9 @@ function App() {
   if (!started) {
     return (
       <div className="start-screen">
-        <h1>Instructions</h1>
+        <h1>The Headlines</h1>
         <div className="start-box">
+          <h3>Instructions</h3>
         <div className="instructions">
           <ul>
             <li>Complete the Headline with the right word based on recent news.</li>
@@ -168,7 +169,6 @@ function App() {
           </ul>
         </div>
         </div>
-        <p>Test your knowledge with breaking news headlines!</p>
         <button className="button-85" onClick={handleStart}>
           ▶️ Start Game
         </button>
