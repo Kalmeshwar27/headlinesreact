@@ -48,8 +48,8 @@ body {
 /* Start Screen */
 /* Start Screen */
 .start-screen {
-  height: 60vh;
-  max-width: 450px;
+  height: 70vh;
+  max-width: 490px;
   margin: 3rem auto;
   text-align: center;
   padding: 2rem;
@@ -602,7 +602,7 @@ body {
 /* === Mobile Responsive Adjustments === */
 
 
-@media (max-width: 480px) {
+@media (max-width: 450px) {
   .start-screen {
     background: image(url('./assets/images/bg7.jpg'));
     background-size: cover;
