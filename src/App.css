@@ -248,6 +248,7 @@ body {
   margin-bottom: 0.5rem;
   user-select: none;
   align-items: center;
+  border-bottom: 1px solid #222;
 }
 
 /* Content layout */
@@ -263,7 +264,7 @@ body {
 /* News Image */
 .news-image {
   width: 100%;
-  max-width: 480px;
+  max-width: 580px;
   height: auto;
   border-radius: 12px;
   border: 3px solid #222;
@@ -298,6 +299,8 @@ body {
   margin-bottom: 1rem;
   user-select: text;
   line-height: 1.4;
+  /* border-bottom: 1px solid #222; */
+  margin-bottom: 2rem;
 }
 
 #blank {
@@ -565,6 +568,7 @@ body {
 
 .image-frame {
   width: 100%;
+  /* increase max-width as needed */
   aspect-ratio: 3 / 2;
   margin: 20px 0;
   display: flex;
@@ -578,7 +582,6 @@ body {
   width: 80%;
   height: auto;
   object-fit: cover;
-  /* border-radius: 8px; */
   pointer-events: none;
   user-select: none;
 }
