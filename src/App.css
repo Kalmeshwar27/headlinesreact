@@ -604,14 +604,16 @@ body {
 
 @media (max-width: 450px) {
   .start-screen {
-    background: image(url('./assets/images/bg7.jpg'));
+    background-image: url('./assets/images/bg7.jpg');
     background-size: contain;
-   width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
     max-width: 340px;
     border: 2px solid #000;
     margin: 1rem auto;
     padding: 1rem;
-}
+  }
 
   .start-screen h1 {
     font-size: 1.8rem;
@@ -675,7 +677,6 @@ body {
     flex: 1 1 45%;
     padding: 0.5rem 0.8rem;
     font-size: 0.9rem;
-    min-width: auto;
     max-width: 45%;
     box-sizing: border-box;
   }
@@ -697,11 +698,13 @@ body {
   .game-over h2 {
     font-size: 1.8rem;
   }
-.game-over-screen {
+
+  .game-over-screen {
     padding: 1rem;
     width: 100%;
     max-width: 360px;
   }
+
   .game-over p {
     font-size: 1rem;
   }
@@ -709,97 +712,6 @@ body {
   .button-85 {
     font-size: 1rem;
     padding: 0.5rem 1rem;
-  }
-}
-
-@media (max-width: 360px) {
-  .option-btn {
-    font-size: 0.85rem;
-    padding: 0.4rem 0.6rem;
-  }
-}
-
-@media (max-width: 708px) {
-  .container {
-    padding: 10px;
-  }
-
-  .content-box {
-    width: 100%;
-    padding: 10px;
-    box-sizing: border-box;
-  }
-
-  .headline-title,
-  .headline-header,
-  .info-bar,
-  .headline-text,
-  .info-text {
-    text-align: center;
-  }
-
-  .content {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .image-frame {
-    width: 100%;
-    margin-bottom: 15px;
-  }
-
-  .news-image {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-  }
-
-  .headline-box {
-    width: 100%;
-  }
-
-  .submit-container {
-    text-align: center;
-    margin-top: 15px;
-  }
-
-  .submit-btn {
-    width: 80%;
-    max-width: 300px;
-    font-size: 16px;
-    padding: 10px;
-  }
-
-  .nav-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-    margin-top: 15px;
-  }
-
-  .nav-buttons button {
-    width: 80%;
-    max-width: 250px;
-    padding: 10px;
-  }
-
-  .start-screen,
-  .game-over-screen {
-    padding: 20px;
-    text-align: center;
-  }
-
-  .button-85 {
-    width: 80%;
-    max-width: 250px;
-    padding: 12px;
-    font-size: 18px;
-  }
-
-  .instructions ul {
-    padding-left: 20px;
-    text-align: left;
   }
 }
 
