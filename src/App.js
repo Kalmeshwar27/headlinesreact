@@ -155,24 +155,50 @@ function App() {
 
   // ... your render code (loading, start screen, game over screen)
 
-  if (loading) return (<div className="loading-screen"><div className="loader"></div><h2>Loading...</h2></div>);
-  if (!started) return (<div className="start-screen"><h1>The Headlines</h1><div className="start-box"><h3>Instructions</h3><div className="instructions"><ul><li>Complete the Headline with the right word based on recent news.</li><li>You have 20 seconds for each question.</li></ul></div></div><button className="button-85" onClick={handleStart}>▶️ Start Game</button></div>);
+
+  if (loading) {
+    return (
+      <div className="loading-screen">
+        <div className="loader"></div>
+        <h2>Loading...</h2>
+      </div>
+    );
+  }
+  if (!started) {
+    return (
+      <div className="start-screen">
+        <div className="start-box">
+          <h1>The Headlines</h1>
+          <h2>Instructions</h2>
+          <div className="instructions">
+            <ul>
+              <li>Complete the Headline with the right word based on recent news.</li>
+              <li>You have 20 seconds for each question.</li>
+            </ul>
+          </div>
+          <button className="button-85" onClick={handleStart}>
+            Start Game
+          </button>
+        </div>
+      </div>
+    );
+  }
   if (gameOver) return (<div className="game-over-screen"><div className="game-over-box"><h1 className="game-over-text">🎉 Game Over 🎉</h1><p className="final-score">You scored: {score} / {questions.length}</p></div><button className="button-85" onClick={handleRestart}>🔁 Restart Game</button></div>);
 
-  return (
-  <div className="main-wrapper">
-    <div className="container">
-      {/* ✅ Background image wrapper with flip */}
-      <div className="background-flip" />
+ return (
+    <div className="main-wrapper">
+      {/* The 'container' will now be the flipping element */}
+      <div key={currentQ} className={`container ${isFlipping ? "flip" : ""}`}>
+        {/* Your previous 'background-flip' div is now redundant if container itself flips */}
+        {/* <div className="background-flip" /> */}
 
-      <div className="content-box">
-        <h3 className="headline-title">The Headlines</h3>
-        <div className="headline-header"><div>Business</div><div>May 2025</div></div>
-        <div className="info-bar"><span>Score: {score}</span><span>Time: {timeLeft}s</span></div>
+        <div className="content-box"> {/* This content box will now be inside the flipping container */}
+          <h3 className="headline-title">The Headlines</h3>
+          <div className="headline-header"><div>Business</div><div>May 2025</div></div>
+          <div className="info-bar"><span>Score: {score}</span><span>Time: {timeLeft}s</span></div>
 
-        {/* ✅ Flip container */}
-        <div key={currentQ} className={`flipper ${isFlipping ? "flip" : ""}`}>
-          <div className="content">
+          {/* The content that appears on the page */}
+          <div className="content"> {/* This 'content' div will contain the actual question and options */}
             <div className="image-frame">
               <img src={current.image} alt="News" className="news-image" />
             </div>
@@ -224,12 +250,11 @@ function App() {
                 </>
               )}
             </div>
-          </div>
-        </div>
-      </div>
+          </div> {/* End .content */}
+        </div> {/* End .content-box */}
+      </div> {/* End .container.flip */}
     </div>
-  </div>
-);
+  );
 }
 
 export default App;
