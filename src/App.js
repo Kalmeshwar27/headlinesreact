@@ -1,4 +1,3 @@
-// ... your imports (unchanged)
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import trumpImage from "./assets/images/trump-speech1.jpg";
@@ -8,13 +7,11 @@ import correctSound from "./assets/sounds/correct.mp3";
 import wrongSound from "./assets/sounds/wrong.mp3";
 import gameOverSound from "./assets/sounds/game-over-sound.mp3";
 
-// ... audio setup (unchanged)
 const startAudio = new Audio(startSound);
 const correctAudio = new Audio(correctSound);
 const wrongAudio = new Audio(wrongSound);
 const gameOverAudio = new Audio(gameOverSound);
 
-// ... questionsData (unchanged)
 const questionsData = [
   {
     image: trumpImage,
@@ -42,7 +39,6 @@ const questionsData = [
   },
 ];
 
-// ... App component start (unchanged)
 function App() {
   const [questions, setQuestions] = useState(questionsData);
   const [loading, setLoading] = useState(true);
@@ -53,7 +49,7 @@ function App() {
   const [score, setScore] = useState(0);
   const [timeLeft, setTimeLeft] = useState(20);
   const [gameOver, setGameOver] = useState(false);
-  const [isFlipping, setIsFlipping] = useState(false); // ✅ ADDED
+  const [isFlipping, setIsFlipping] = useState(false); // add this at the top
 
   const current = questions[currentQ];
 
@@ -80,8 +76,10 @@ function App() {
   const handleAutoSubmit = () => {
     const updatedQuestions = [...questions];
     const updatedQ = { ...updatedQuestions[currentQ] };
+
     updatedQ.attempted = true;
     updatedQ.correct = false;
+
     updatedQuestions[currentQ] = updatedQ;
     wrongAudio.play();
     setQuestions(updatedQuestions);
@@ -94,6 +92,7 @@ function App() {
     const isCorrect = selectedOption === current.correctAnswer;
     const updatedQuestions = [...questions];
     const updatedQ = { ...updatedQuestions[currentQ] };
+
     updatedQ.attempted = true;
     updatedQ.correct = isCorrect;
 
@@ -111,18 +110,18 @@ function App() {
   };
 
   const nextQuestion = () => {
-    if (currentQ + 1 < questions.length) {
-      setIsFlipping(true); // ✅ TRIGGER FLIP
-      setTimeout(() => {
-        setCurrentQ((q) => q + 1);
-        resetState();
-        setIsFlipping(false); // ✅ END FLIP
-      }, 600); // ✅ match CSS animation duration
-    } else {
-      setGameOver(true);
-      gameOverAudio.play();
-    }
-  };
+  if (currentQ + 1 < questions.length) {
+    setIsFlipping(true); // Start animation
+    setTimeout(() => {
+      setCurrentQ((q) => q + 1);
+      resetState();
+      setIsFlipping(false); // End animation
+    }, 600); // duration should match CSS animation
+  } else {
+    setGameOver(true);
+    gameOverAudio.play();
+  }
+};
 
   const previousQuestion = () => {
     if (currentQ > 0) {
@@ -153,9 +152,6 @@ function App() {
     setTimeLeft(20);
   };
 
-  // ... your render code (loading, start screen, game over screen)
-
-
   if (loading) {
     return (
       <div className="loading-screen">
@@ -164,97 +160,119 @@ function App() {
       </div>
     );
   }
+
   if (!started) {
     return (
       <div className="start-screen">
+        <h1>The Headlines</h1>
         <div className="start-box">
-          <h1>The Headlines</h1>
-          <h2>Instructions</h2>
-          <div className="instructions">
-            <ul>
-              <li>Complete the Headline with the right word based on recent news.</li>
-              <li>You have 20 seconds for each question.</li>
-            </ul>
-          </div>
-          <button className="button-85" onClick={handleStart}>
-            Start Game
-          </button>
+          <h3>Instructions</h3>
+        <div className="instructions">
+          <ul>
+            <li>Complete the Headline with the right word based on recent news.</li>
+            <li>You have 20 seconds for each question.</li>
+          </ul>
         </div>
+        </div>
+        <button className="button-85" onClick={handleStart}>
+          ▶️ Start Game
+        </button>
+      </div>
+    
+    );
+  }
+
+  if (gameOver) {
+    return (
+      <div className="game-over-screen">
+        <div className="game-over-box">
+          <h1 className="game-over-text">🎉 Game Over 🎉</h1>
+          <p className="final-score">
+            You scored: {score} / {questions.length}
+          </p>
+        </div>
+        <button className="button-85" onClick={handleRestart}>
+          🔁 Restart Game
+        </button>
       </div>
     );
   }
-  if (gameOver) return (<div className="game-over-screen"><div className="game-over-box"><h1 className="game-over-text">🎉 Game Over 🎉</h1><p className="final-score">You scored: {score} / {questions.length}</p></div><button className="button-85" onClick={handleRestart}>🔁 Restart Game</button></div>);
 
- return (
-    <div className="main-wrapper">
-      {/* The 'container' will now be the flipping element */}
-      <div key={currentQ} className={`container ${isFlipping ? "flip" : ""}`}>
-        {/* Your previous 'background-flip' div is now redundant if container itself flips */}
-        {/* <div className="background-flip" /> */}
+  return (
+    <div className="container">
+      <div className="content-box">
+        <h3 className="headline-title">The Headlines</h3>
+        <div className="headline-header">
+          <div>Business</div>
+          <div>May 2025</div>
+        </div>
 
-        <div className="content-box"> {/* This content box will now be inside the flipping container */}
-          <h3 className="headline-title">The Headlines</h3>
-          <div className="headline-header"><div>Business</div><div>May 2025</div></div>
-          <div className="info-bar"><span>Score: {score}</span><span>Time: {timeLeft}s</span></div>
+        <div className="info-bar">
+          <span>Score: {score}</span>
+          <span>Time: {timeLeft}s</span>
+        </div>
+      <div key={currentQ} className={`flipper ${isFlipping ? "flip" : ""}`}>
 
-          {/* The content that appears on the page */}
-          <div className="content"> {/* This 'content' div will contain the actual question and options */}
-            <div className="image-frame">
-              <img src={current.image} alt="News" className="news-image" />
+        <div className="content">
+          <div className="image-frame">
+            <img src={current.image} alt="News" className="news-image" />
+          </div>
+          <div className="headline-box">
+            <p
+              className="headline-text"
+              dangerouslySetInnerHTML={{
+                __html: submitted || current.attempted ? filledSentence : current.sentence,
+              }}
+            />
+
+            <div className="options">
+              {current.options.map((option) => {
+                const isSelected = selected === option;
+                const isCorrect = submitted && option === current.correctAnswer;
+                const isWrong = submitted && isSelected && !isCorrect;
+
+                let className = "option-btn";
+                if (submitted || current.attempted) {
+                  if (isCorrect) className += " correct";
+                  else if (isWrong) className += " wrong";
+                }
+
+                return (
+                  <button
+                    key={option}
+                    className={className}
+                    onClick={() => handleSubmit(option)}
+                    disabled={submitted || current.attempted}
+                  >
+                    {option}
+                  </button>
+                );
+              })}
             </div>
-            <div className="headline-box">
-              <p
-                className="headline-text"
-                dangerouslySetInnerHTML={{
-                  __html: submitted || current.attempted ? filledSentence : current.sentence,
-                }}
-              />
-              <div className="options">
-                {current.options.map((option) => {
-                  const isSelected = selected === option;
-                  const isCorrect = submitted && option === current.correctAnswer;
-                  const isWrong = submitted && isSelected && !isCorrect;
 
-                  let className = "option-btn";
-                  if (submitted || current.attempted) {
-                    if (isCorrect) className += " correct";
-                    else if (isWrong) className += " wrong";
-                  }
+            {(submitted || current.attempted) && (
+              <>
+                <div className="info-text">
+                  <p>{current.info}</p>
+                  <a href={current.readMore} target="_blank" rel="noopener noreferrer">
+                    Read More
+                  </a>
+                </div>
 
-                  return (
-                    <button
-                      key={option}
-                      className={className}
-                      onClick={() => handleSubmit(option)}
-                      disabled={submitted || current.attempted}
-                    >
-                      {option}
-                    </button>
-                  );
-                })}
-              </div>
-
-              {(submitted || current.attempted) && (
-                <>
-                  <div className="info-text">
-                    <p>{current.info}</p>
-                    <a href={current.readMore} target="_blank" rel="noopener noreferrer">
-                      Read More
-                    </a>
-                  </div>
-                  <div className="nav-buttons">
-                    <button onClick={nextQuestion}>
-                      {currentQ === questions.length - 1 ? "Finish" : "Next"}
-                    </button>
-                  </div>
-                </>
-              )}
-            </div>
-          </div> {/* End .content */}
-        </div> {/* End .content-box */}
-      </div> {/* End .container.flip */}
+                <div className="nav-buttons">
+                  <button onClick={nextQuestion}>
+                    {currentQ === questions.length - 1 ? "Finish" : "Next"}
+                  </button>
+                </div>
+              </>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
     </div>
   );
 }
 
 export default App;
+
