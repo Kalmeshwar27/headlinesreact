@@ -872,3 +872,50 @@ body {
 }
 /* Page Flip Animation */
 /* Removed old, conflicting flip styles and integrated into .container and .front-content/.back-content */
+
+@media (max-width: 600px) {
+  .start-screen {
+    padding: 1rem;
+    margin: 1rem;
+    height: auto;
+    min-height: 100vh;
+    border: none;
+    border-radius: 8px;
+  }
+
+  .start-screen h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    margin-top: -2rem;
+  }
+
+  .start-screen h2 {
+    font-size: 1rem;
+  }
+
+  .start-screen p {
+    font-size: 0.6rem;
+    margin-bottom: 2rem;
+  }
+
+  .start-button, .button-85 {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+    margin-bottom: 2rem;
+    min-width: 160px;
+  }
+
+  .instructions li {
+    font-size: 1rem;
+  }
+
+  .start-box {
+    padding: 1rem;
+    background-size: cover;
+  }
+
+  .container {
+    max-width: 90%;
+    padding: 1rem;
+  }
+}
