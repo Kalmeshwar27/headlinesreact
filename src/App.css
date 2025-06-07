@@ -1012,7 +1012,7 @@ body {
   flex: 0 0 calc(50% - 1rem); /* force two per row */
   box-sizing: border-box;
   text-align: center;
-  background-color: #673318;
+  background-color: #5a4631;
   border: 2px solid #000;
   border-radius: 12px;
   padding: 0.7rem 1.2rem;
