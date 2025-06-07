@@ -732,6 +732,7 @@ body {
     font-size: 1rem;
   }
 }
+/*Mobike Screen */
 
 @media (max-width: 768px) {
 @media (max-width: 300px) {
@@ -861,82 +862,35 @@ body {
 }
 
 @media (max-width: 480px) {
-  @media(max-width: 00px) {
   .start-screen {
     border: 2px solid #000;
     margin: 1rem auto;
+     width: 100%;
+  max-width: 340px;
     padding: 1rem;
   }
 }
 
   .start-screen h1 {
     font-size: 1.8rem;
-  }
-
-  .start-screen p {
-    font-size: 0.9rem;
-  }
-
-  .instructions li {
-    font-size: 0.9rem;
-  }
-
   .container {
     padding: 1rem;
+    width: 100%;
+  max-width: 340px;
   }
+}
 
   .headline-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    font-size: 0.85rem;
-    padding-bottom: 0.4rem;
-    margin-bottom: 0.8rem;
-    border-bottom: 2px solid #000;
-  }
-
-  .headline-title {
-    font-size: 2.7rem;
-  }
-
-  .info-bar {
-    font-size: 0.9rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-
-  .info-bar > div {
-    flex: 1 1 45%;
-    min-width: 200px;
-  }
-
-  .headline-text {
-    font-size: 1rem;
-  }
-
-  .options {
-    gap: 1rem;
-    justify-content: center;
-  }
-
-  .option-btn {
-    flex: 1 1 45%;
-    padding: 0.5rem 0.8rem;
-    font-size: 0.9rem;
-    min-width: auto;
-    max-width: 45%;
-    box-sizing: border-box;
-  }
-
-  .nav-buttons button {
-    font-size: 0.9rem;
-    padding: 0.55rem 0;
-  }
 
   .status-bar {
     font-size: 0.9rem;
   }
+.game-over-screen{
+  border: 2px solid #000;
+    margin: 1rem auto;
+  width: 100%;
+  max-width: 340px;
+}
 
   .game-over h2 {
     font-size: 1.8rem;
@@ -1046,8 +1000,6 @@ body {
 /* ✅ OUTSIDE media query — main .options layout */
 
 .options {
-  background: image(url('./assets/images/b1.png'));
-  background-size: cover;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -1060,11 +1012,9 @@ body {
   flex: 0 0 calc(50% - 1rem); /* force two per row */
   box-sizing: border-box;
   text-align: center;
-  background: image(url('./assets/images/b1.png'));
-  background-size: cover;
-  background-color: #5a4631;
-  border: 2px solid #ffffff;
-  border-radius: 15px;
+  background-color: #673318;
+  border: 2px solid #000;
+  border-radius: 12px;
   padding: 0.7rem 1.2rem;
   font-size: 1.05rem;
   font-weight: 700;
