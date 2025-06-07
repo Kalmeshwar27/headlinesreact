@@ -203,7 +203,7 @@ function App() {
       <img 
     src={current.image} 
     alt={`question-${currentQ}`} 
-    style={{ width: '100%', height: 'auto', marginBottom: '1rem' }} 
+    style={{ width: '125%', height: 'auto', marginBottom: '1rem' }} 
   />
             <div className="headline-box">
               <p

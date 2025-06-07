@@ -46,21 +46,17 @@ body {
 }
 
 /* Start Screen */
-/* Start Screen */
 .start-screen {
   height: 70vh;
-  max-width: 490px;
+  max-width: 350px;
   margin: 3rem auto;
   text-align: center;
   padding: 2rem;
-  background-image: url('./assets/images/bg5.jpg');
+  background-image: url('./assets/images/bg6.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   color: rgb(0, 0, 0);
-  border-radius: 12px;
-  border: 3px solid rgba(0, 0, 0, 0.7); /* ✨ Elegant border */
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -98,9 +94,8 @@ body {
   font-size: 2.5rem;
   margin-top: -5rem;
   color: #000;
-  /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); */
   margin-bottom: 3rem;
-  border-bottom: 2px solid #222;
+  /* border-bottom: 2px solid #222; */
 }
 .start-screen h3{
   font-size: 1.2rem;
@@ -210,21 +205,15 @@ body {
 /* Container */
 .container {
   width: 100%;
-  max-width: 500px;
+  max-width: 400px;
   background: url('./assets/images/bg6.jpg') no-repeat center center;
   background-size: cover;
-  border-radius: 12px;
   padding: 30px 25px 40px;
-  /* more bottom padding if needed */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  color: #222;
   text-align: center;
   position: relative;
   user-select: none;
   display: flex;
   flex-direction: column;
-   border-radius: 12px;
-  border: 3px solid rgba(0, 0, 0, 0.7); /* ✨ Elegant border */
 }
 
 .headline-title {
@@ -243,7 +232,6 @@ body {
   font-family: poppins, sans-serif;
   font-size: 0.95rem;
   font-weight: 500;
-  /* text-transform: uppercase; */
   border-bottom: 2px solid #222;
   padding-bottom: 0.5rem;
   margin-bottom: 1rem;
@@ -252,7 +240,6 @@ body {
 }
 
 .info-bar {
-
   display: flex;
    justify-content: space-between;
   gap: 1rem;
@@ -266,7 +253,6 @@ body {
 
 /* Content layout */
 .content {
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -297,16 +283,16 @@ body {
 
 /* Headline Text */
 .headline-text {
-  width: 100%;
+  text-align: center;
+  margin-left: -2rem;
+  width: 120%;
   border-radius: 8px;
-  /* font-family: "Georgia", serif; */
   font-family: Rozha, serif;
   font-weight: 700;
   font-size: 1.5rem;
   color: rgb(0, 0, 0);
   user-select: text;
   line-height: 1.4;
-  /* border-bottom: 1px solid #222; */
   margin-bottom: 2rem;
 }
 
@@ -352,11 +338,9 @@ body {
 
 /* Unskew the inner text */
 
-
 .option-btn:hover:not(:disabled) {
   background-color: #000000;
 }
-
 
 .option-btn.selected {
   background-color: #010101;
@@ -379,10 +363,6 @@ body {
   cursor: default;
   opacity: 0.8;
 }
-
-
-
-
 
 /* Info text and Read More */
 .info-text {
@@ -408,6 +388,8 @@ body {
   margin-top: 1.5rem;
   display: flex;
   justify-content: space-between;
+  margin-left: -3.2rem;
+  align-items: center;
 }
 
 .nav-buttons button {
@@ -423,7 +405,7 @@ body {
   user-select: none;
   display: flex;
   justify-content: center;
-  margin-left: 8.5rem; /* add space from the content above if needed */
+  margin-left: 8.5rem; 
 }
 
 .nav-buttons button:disabled {
@@ -458,14 +440,11 @@ body {
   margin: 3rem auto;
   text-align: center;
   padding: 2rem;
-  background-image: url('./assets/images/bg5.jpg');
+  background-image: url('./assets/images/bg6.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   color: rgb(255, 255, 255);
-  border-radius: 12px;
-  border: 3px solid rgba(0, 0, 0, 0.7); /* ✨ Elegant border */
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -488,7 +467,6 @@ body {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -504,7 +482,6 @@ body {
   margin: 3rem auto;
   text-align: center;
   padding: 2rem;
-
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -533,26 +510,6 @@ body {
   z-index: -2;
 }
 
-.game-over::after {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background-color: rgba(255, 255, 255, 0.9);
-  z-index: -1;
-}
-
-.game-over h2 {
-  font-size: 2.8rem;
-  margin-bottom: 1rem;
-  color: #000;
-}
-
-.game-over p {
-  font-size: 1.25rem;
-  margin-bottom: 2rem;
-  color: #000;
-}
 
 
 @keyframes fadeScaleIn {
@@ -571,11 +528,11 @@ body {
   user-select: none;
   margin: 1rem auto;
   transition: background 0.3s ease, border-color 0.3s ease;
+  margin-top: 1rem;
 }
 
 .image-frame {
   width: 110%;
-  /* increase max-width as needed */
   aspect-ratio: 3 / 2;
   margin: 20px 0;
   display: flex;
@@ -606,7 +563,6 @@ body {
     background-position: center;
     width: 100%;
     max-width: 325px;
-    border: 2px solid #000;
     margin: 1rem auto;
     padding: 1rem;
   }
@@ -672,9 +628,6 @@ body {
   gap: 0.8rem;
   justify-content: center;
 }
-
-
-
   .option-btn {
   background-color: #5a4631;
   text-align: center;
@@ -695,7 +648,7 @@ body {
   }
 
   .nav-buttons button {
-    background-color: #5a4631;
+  background-color: #5a4631;
   border: 3px solid #ffffff;
   border-radius: 15px;
   padding: 0.7rem 1.6rem;
@@ -725,7 +678,6 @@ body {
     background-position: center;
     width: 100%;
     max-width: 325px;
-    border: 2px solid #000;
     margin: 1rem auto;
     padding: 1rem;
   }
