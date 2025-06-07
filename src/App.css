@@ -733,52 +733,349 @@ body {
   }
 }
 
+@media (max-width: 768px) {
 @media (max-width: 300px) {
-  .start-screen, .game-over-screen {
-    margin: 1rem auto;
-    padding: 1rem;
-    min-height: 80vh; /* Adjust further for very small screens */
+  .start-screen {
+    max-width: 300px;
+    margin: 1.5rem auto;
+    padding: 1.5rem;
+  }
+}
+  .start-screen {
+    margin: 1.5rem auto;
+    padding: 1.5rem;
   }
 
   .start-screen h1 {
-    font-size: 1.5rem;
-    margin-top: -2rem;
-    margin-bottom: 1.5rem;
+    font-size: 2.2rem;
+  }
+
+  .start-screen p {
+    font-size: 1rem;
+  }
+
+  .instructions li {
+    font-size: 1rem;
   }
 
   .container {
-    padding: 0.8rem;
+    max-width: 100%;
+    margin: 0.5rem 0 1.5rem;
+    padding: 1.5rem;
   }
 
   .headline-title {
-    font-size: 2.2rem;
+    font-size: 2.6rem;
+    letter-spacing: 0.03rem;
+  }
+
+  .headline-header {
+    font-size: 0.85rem;
+    padding-bottom: 0.4rem;
+    margin-bottom: 0.8rem;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-start;
+    text-align: right;
+  }
+
+  .info-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    user-select: none;
+  }
+
+  .content,
+  .content-box {
+    padding: 1rem;
+  }
+
+  .headline-box {
+    max-width: 100%;
+  }
+
+  .news-image {
+    max-width: 100%;
+    border-width: 2px;
+    margin: 15px 0;
   }
 
   .headline-text {
     font-size: 1.1rem;
-    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+
+  .speak-btn {
+    font-size: 0.9rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+  .submit-btn {
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 0.7rem 0;
+  }
+
+  .nav-buttons {
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+
+  .nav-buttons > * {
+    flex: 1 1 calc(50% - 0.4rem);
+  }
+
+  .nav-buttons button {
+    font-size: 1rem;
+    padding: 0.65rem 0;
+  }
+
+  .status-bar {
+    flex-direction: column;
+    gap: 0.3rem;
+    font-size: 1rem;
+  }
+
+  .game-over {
+    width: 95%;
+    padding: 1.5rem;
+  }
+
+  .game-over h2 {
+    font-size: 2.2rem;
+  }
+
+  .game-over p {
+    font-size: 1.1rem;
+  }
+
+  .button-85 {
+    font-size: 1.1rem;
+    padding: 0.6rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  @media(max-width: 00px) {
+  .start-screen {
+    border: 2px solid #000;
+    margin: 1rem auto;
+    padding: 1rem;
+  }
+}
+
+  .start-screen h1 {
+    font-size: 1.8rem;
+  }
+
+  .start-screen p {
+    font-size: 0.9rem;
+  }
+
+  .instructions li {
+    font-size: 0.9rem;
+  }
+
+  .container {
+    padding: 1rem;
+  }
+
+  .headline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-size: 0.85rem;
+    padding-bottom: 0.4rem;
+    margin-bottom: 0.8rem;
+    border-bottom: 2px solid #000;
+  }
+
+  .headline-title {
+    font-size: 2.7rem;
+  }
+
+  .info-bar {
+    font-size: 0.9rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .info-bar > div {
+    flex: 1 1 45%;
+    min-width: 200px;
+  }
+
+  .headline-text {
+    font-size: 1rem;
+  }
+
+  .options {
+    gap: 1rem;
+    justify-content: center;
   }
 
   .option-btn {
-    padding: 0.5rem 0.6rem;
-    font-size: 0.85rem;
+    flex: 1 1 45%;
+    padding: 0.5rem 0.8rem;
+    font-size: 0.9rem;
+    min-width: auto;
+    max-width: 45%;
+    box-sizing: border-box;
   }
 
   .nav-buttons button {
     font-size: 0.9rem;
-    padding: 0.5rem 1rem;
+    padding: 0.55rem 0;
+  }
+
+  .status-bar {
+    font-size: 0.9rem;
   }
 
   .game-over h2 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
 
   .game-over p {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 
   .button-85 {
-    font-size: 0.9rem;
-    padding: 0.4rem 0.8rem;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .option-btn {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.6rem;
+  }
+}
+
+@media (max-width: 708px) {
+  .container {
+    padding: 10px;
+  }
+
+  .content-box {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .headline-title,
+  .headline-header,
+  .info-bar,
+  .headline-text,
+  .info-text {
+    text-align: center;
+  }
+
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .image-frame {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .news-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .headline-box {
+    width: 100%;
+  }
+
+  .submit-container {
+    text-align: center;
+    margin-top: 15px;
+  }
+
+  .submit-btn {
+    width: 80%;
+    max-width: 300px;
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .nav-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    margin-top: 15px;
+  }
+
+  .nav-buttons button {
+    width: 80%;
+    max-width: 250px;
+    padding: 10px;
+  }
+
+  .start-screen,
+  .game-over-screen {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .button-85 {
+    width: 80%;
+    max-width: 250px;
+    padding: 12px;
+    font-size: 18px;
+  }
+
+  .instructions ul {
+    padding-left: 20px;
+    text-align: left;
+  }
+}
+
+/* ✅ OUTSIDE media query — main .options layout */
+
+.options {
+  background: image(url('./assets/images/b1.png'));
+  background-size: cover;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 480px;
+  margin: 0 auto 1rem;
+}
+
+.option-btn {
+  flex: 0 0 calc(50% - 1rem); /* force two per row */
+  box-sizing: border-box;
+  text-align: center;
+  background: image(url('./assets/images/b1.png'));
+  background-size: cover;
+  background-color: #5a4631;
+  border: 2px solid #ffffff;
+  border-radius: 15px;
+  padding: 0.7rem 1.2rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+@media (max-width: 300px) {
+  .start-screen {
+    margin: 1.5rem auto;
+    padding: 1.5rem;
   }
 }
