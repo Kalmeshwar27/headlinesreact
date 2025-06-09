@@ -616,11 +616,6 @@ body {
     font-size: 1.2rem;
   }
 
-  .speak-btn {
-    font-size: 0.8rem;
-    padding: 0.25rem 0.5rem;
-  }
- 
 
   .options {
   display: flex;
@@ -642,11 +637,6 @@ body {
   white-space: normal;         /* Optional: wrap long text */   /* Optional: prevent overflow */
 }
 
-  .submit-btn {
-    font-size: 1rem;
-    padding: 0.6rem 0;
-  }
-
   .nav-buttons button {
   background-color: #5a4631;
   border: 3px solid #ffffff;
@@ -660,7 +650,7 @@ body {
   user-select: none;
   display: flex;
   justify-content: center;
-  margin-left: 4.5rem; /* add space from the content above if needed */
+  margin-left: 2.5rem; /* add space from the content above if needed */
   }
 
   .status-bar {
