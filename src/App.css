@@ -206,7 +206,7 @@ body {
 .container {
   width: 100%;
   max-width: 380px;
-  background: url('./assets/images/bg10.jpg') no-repeat center center;
+  background: url('./assets/images/bg25.jpg') no-repeat center center;
   background-size: cover;
   padding: 30px 25px 40px;
   text-align: center;
@@ -538,7 +538,7 @@ body {
 
 @media (max-width: 450px) {
   .start-screen {
-    background-image: url('./assets/images/bg6.jpg');
+    background-image: url('./assets/images/bg11.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -563,7 +563,11 @@ body {
   .container {
     padding: 1rem;
     width: 100%;
-    max-width: 348px;
+    max-width: 38px;
+    background-image: url('./assets/images/bg25.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     
   }
 
@@ -643,7 +647,7 @@ body {
   }
 
   .game-over-screen {
-   background-image: url('./assets/images/bg6.jpg');
+   background-image: url('./assets/images/bg13.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
