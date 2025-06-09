@@ -206,7 +206,7 @@ body {
 .container {
   width: 100%;
   max-width: 380px;
-  background: url('./assets/images/bg25.jpg') no-repeat center center;
+  background: url('./assets/images/bg26.jpg') no-repeat center center;
   background-size: cover;
   padding: 30px 25px 40px;
   text-align: center;
@@ -564,7 +564,7 @@ body {
     padding: 1rem;
     width: 100%;
     max-width: 350px;
-    background-image: url('./assets/images/bg25.jpg');
+    background-image: url('./assets/images/bg26.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
