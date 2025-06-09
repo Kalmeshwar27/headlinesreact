@@ -652,12 +652,12 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     width: 100%;
-    max-width: 355px;
+    max-width: 400px;
     margin: 1rem auto;
     padding: 1rem;
   }
 .game-over-text {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 1rem;
   color: #ffffff;
