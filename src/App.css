@@ -563,7 +563,7 @@ body {
   .container {
     padding: 1rem;
     width: 100%;
-    max-width: 380px;
+    max-width: 340px;
     background-image: url('./assets/images/bg25.jpg');
     background-size: cover;
     background-position: center;
