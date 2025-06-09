@@ -563,7 +563,7 @@ body {
   .container {
     padding: 1rem;
     width: 100%;
-    max-width: 328px;
+    max-width: 348px;
     
   }
 
@@ -610,12 +610,12 @@ body {
   flex: 1 1 45%;
   padding: 0.5rem 0.8rem;
   font-size: 0.9rem;
-  max-width: 100%;/* Ensure it doesn't exceed the width */
+  max-width: 100%;
   box-sizing: border-box;
-  display: flex;               /* Add this */
-  justify-content: center;     /* Add this */
-  align-items: center;         /* Add this */
-  white-space: normal;         /* Optional: wrap long text */   /* Optional: prevent overflow */
+  display: flex;               
+  justify-content: center;     
+  align-items: center;        
+  white-space: normal;         
 }
 
   .nav-buttons button {
