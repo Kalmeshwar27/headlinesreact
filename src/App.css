@@ -485,6 +485,7 @@ body {
 .final-score {
   font-size: 1.2rem;
   color: #333;
+  color: #ffffff;
 }
 
 
@@ -562,7 +563,7 @@ body {
   .container {
     padding: 1rem;
     width: 100%;
-    max-width: 378px;
+    max-width: 328px;
     
   }
 
