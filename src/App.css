@@ -451,8 +451,6 @@ body {
   justify-content: center;
   min-height: 95vh;
   backdrop-filter: blur(3px);
-  /* border-radius: 16px; */
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
   animation: fadeScaleIn 0.8s ease forwards;
   transform: scale(0.9);
   opacity: 0;
