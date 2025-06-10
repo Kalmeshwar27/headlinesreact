@@ -436,11 +436,11 @@ body {
 /* Game Over Screen */
 .game-over-screen {
   width: 100%;
-  max-width: 500px;
+  max-width: 600px;
   margin: 2rem auto;
   padding: 2rem;
   text-align: center;
-  background-image: url('./assets/images/bg13.jpg');
+  background-image: url('./assets/images/bg11.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -459,10 +459,10 @@ body {
 
 .game-over-box {
   width: 100%;
-  max-width: 460px;
+  max-width: 500px;
   padding: 2rem;
   background-image: url('./assets/images/box.png');
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   display: flex;
@@ -476,7 +476,7 @@ body {
 }
 
 .game-over-text {
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 1rem;
   color: #ffffff;
@@ -647,15 +647,16 @@ body {
   }
 
   .game-over-screen {
-    background-image: url('./assets/images/bg13.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 100%;
-    max-width: 400px;
-    margin: 1rem auto;
-    padding: 1rem;
-  }
+  background-image: url('./assets/images/bg13.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  max-width: 325px; /* Match start-screen */
+  margin: 1rem auto;
+  padding: 1rem;
+  box-sizing: border-box;
+}
 .game-over-text {
   font-size: 1.5rem;
   font-weight: bold;
@@ -702,3 +703,9 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+.game-over-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
