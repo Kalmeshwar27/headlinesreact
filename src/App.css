@@ -701,3 +701,47 @@ body {
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
+@media (max-width: 450px) {
+  .game-over-screen {
+    width: 100%;
+    max-width: 100%; /* Allow full width on mobile */
+    margin: 0 auto;
+    padding: 1rem;
+    background-image: url('./assets/images/bg13.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh; /* ensure it fills screen */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .game-over-box {
+    width: 100%;
+    max-width: 100%; /* Make it full width */
+    padding: 1rem;
+    background-image: url('./assets/images/box.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .game-over-text {
+    font-size: 1.6rem;
+    text-align: center;
+    padding: 0 0.5rem;
+  }
+
+  .final-score {
+    font-size: 1rem;
+    padding: 0 0.5rem;
+    text-align: center;
+  }
+}
