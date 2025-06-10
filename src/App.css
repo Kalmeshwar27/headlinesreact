@@ -536,7 +536,7 @@ body {
 /* === Mobile Responsive Adjustments === */
 
 
-@media (max-width: 500px) {
+@media (max-width: 450px) {
   .start-screen {
     background-image: url('./assets/images/bg11.jpg');
     background-size: cover;
@@ -656,6 +656,23 @@ body {
   margin: 1rem auto;
   padding: 1rem;
   box-sizing: border-box;
+}
+.game-over-box {
+  width: 100%;
+  max-width: 450px;
+  padding: 2rem;
+  background-image: url('./assets/images/box.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  animation: fadeScaleIn 0.8s ease forwards;
+  transform: scale(0.9);
+  opacity: 0;
 }
 .game-over-text {
   font-size: 2.0rem;
