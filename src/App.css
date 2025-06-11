@@ -52,7 +52,7 @@ body {
   margin: 3rem auto;
   text-align: center;
   padding: 2rem;
-  background-image: url('./assets/images/bg11.jpg');
+  background-image: url('./assets/images/bg30.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -275,7 +275,7 @@ body {
 .headline-box {
   max-width: 490px;
   width: 100%;
-  background: #f5e7cc;
+ background: #f5e7cc;
   display: flex;
   flex-direction: column;
   user-select: none;
@@ -388,7 +388,7 @@ body {
   margin-top: 1.5rem;
   display: flex;
   justify-content: space-between;
-  margin-left: -3.2rem;
+  margin-left: -3.4rem;
   align-items: center;
 }
 
@@ -530,6 +530,12 @@ body {
   pointer-events: none;
   user-select: none;
 }
+
+
+
+
+
+
 
 
 

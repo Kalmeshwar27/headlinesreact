@@ -158,7 +158,7 @@ function App() {
           </div>
         </div>
         <button className="button-85" onClick={handleStart}>
-          ▶️ Start 
+           Start ▶️
         </button>
       </div>
     );
@@ -174,7 +174,7 @@ function App() {
           </p>
         </div>
         <button className="button-85" onClick={handleRestart}>
-          🔁 Restart
+           Restart 🔁
         </button>
       </div>
     );
