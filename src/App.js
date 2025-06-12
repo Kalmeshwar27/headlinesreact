@@ -4,6 +4,7 @@ import startSound from "./assets/sounds/start.mp3";
 import correctSound from "./assets/sounds/correct.mp3";
 import wrongSound from "./assets/sounds/wrong.mp3";
 import gameOverSound from "./assets/sounds/game-over-sound.mp3";
+import questionsData from './questions.json';
 
 const startAudio = new Audio(startSound);
 const correctAudio = new Audio(correctSound);
@@ -21,26 +22,17 @@ function App() {
   const [timeLeft, setTimeLeft] = useState(20);
   const [gameOver, setGameOver] = useState(false);
   const [isFlipping, setIsFlipping] = useState(false);
+ 
 
-  useEffect(() => {
-    // Fetch questions from the JSON file
-    fetch("/questions.json")
-      .then((res) => res.json())
-      .then((data) => {
-        // Add attempted and correct fields, and set image paths
-        const processed = data.data.map((q) => ({
-         ...q,
-         attempted: false,
-          correct: false,
-}));
-        setQuestions(processed);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error("Failed to load questions:", err);
-        setLoading(false);
-      });
-  }, []);
+ useEffect(() => {
+  const processed = questionsData.data.map((q) => ({
+    ...q,
+    attempted: false,
+    correct: false,
+  }));
+  setQuestions(processed);
+  setLoading(false);
+}, []);
 
   useEffect(() => {
     if (submitted || gameOver || !started || questions.length === 0) return;
@@ -158,7 +150,7 @@ function App() {
           </div>
         </div>
         <button className="button-85" onClick={handleStart}>
-           Start ▶️
+           Start
         </button>
       </div>
     );
@@ -174,7 +166,7 @@ function App() {
           </p>
         </div>
         <button className="button-85" onClick={handleRestart}>
-           Restart 🔁
+           Restart
         </button>
       </div>
     );

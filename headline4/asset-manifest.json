@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.ea156352.css",
+    "main.js": "/static/js/main.4978eb28.js",
+    "static/js/453.ff398806.chunk.js": "/static/js/453.ff398806.chunk.js",
+    "static/media/bg26.jpg": "/static/media/bg26.4adbc03c802af72da6ed.jpg",
+    "static/media/bg27.jpg": "/static/media/bg27.4ad1af8d3182370261d5.jpg",
+    "static/media/bg30.jpg": "/static/media/bg30.f6e1edfbfa5a1fdebbcc.jpg",
+    "static/media/bg11.jpg": "/static/media/bg11.6bfefbf3a5f71cc52e42.jpg",
+    "static/media/box2.png": "/static/media/box2.834eb728a63e36d6fd3c.png",
+    "static/media/box.png": "/static/media/box.d95297f0e6aa1256092e.png",
+    "static/media/correct.mp3": "/static/media/correct.ab69b71ec0953d7f5f50.mp3",
+    "static/media/wrong.mp3": "/static/media/wrong.f915631baa2861a1bc2c.mp3",
+    "static/media/start.mp3": "/static/media/start.53ff71dcaf842ded50cd.mp3",
+    "static/media/game-over-sound.mp3": "/static/media/game-over-sound.3abf30c3dd930f5b342c.mp3",
+    "index.html": "/index.html",
+    "main.ea156352.css.map": "/static/css/main.ea156352.css.map",
+    "main.4978eb28.js.map": "/static/js/main.4978eb28.js.map",
+    "453.ff398806.chunk.js.map": "/static/js/453.ff398806.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ea156352.css",
+    "static/js/main.4978eb28.js"
+  ]
+}
