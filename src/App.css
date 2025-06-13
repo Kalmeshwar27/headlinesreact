@@ -1,3 +1,5 @@
+
+
 /* Global resets */
 * {
   box-sizing: border-box;
@@ -8,13 +10,14 @@
 body {
   margin: 0;
   font-family: "Times New Roman", serif;
-  background-color: #f0f0f0;
+  background-color: #fafafa;
   color: #222;
   overflow-x: hidden;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: #f0f0f0; /* or your preferred background */
 }
 
 /* Loading screen */
@@ -25,11 +28,11 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  width: 100%;
 }
 
 .loader {
   will-change: transform;
+  color: blue;
   border: 6px solid #eee;
   border-top: 6px solid #174ad7;
   border-radius: 50%;
@@ -46,12 +49,11 @@ body {
 
 /* Start Screen */
 .start-screen {
-  height: auto;
-  width: 100%;
+  height: 70vh;
   max-width: 350px;
-  margin: 0 auto;
+  margin: 3rem auto;
   text-align: center;
-  padding: clamp(1rem, 5vw, 2rem);
+  padding: 2rem;
   background-image: url('./assets/images/bg30.jpg');
   background-size: cover;
   background-position: center;
@@ -61,7 +63,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 90vh;
+  min-height: 95vh;
   backdrop-filter: blur(2px);
   position: relative;
   z-index: 999;
@@ -70,11 +72,12 @@ body {
   opacity: 0;
 }
 
+
 .start-box {
   align-content: center;
   width: 100%;
   max-width: 350px;
-  padding: clamp(1rem, 5vw, 2rem);
+  padding: 2rem;
   background-image: url('./assets/images/box2.png');
   background-size: contain;
   background-position: center;
@@ -88,37 +91,35 @@ body {
   transform: scale(0.9);
   opacity: 0;
 }
-
 .start-screen h1 {
   font-family: "Georgia", serif;
-  font-size: clamp(1.8rem, 8vw, 2.5rem);
-  margin-top: clamp(-3rem, -10vw, -5rem);
+  font-size: 2.5rem;
+  margin-top: -5rem;
   color: #000;
-  margin-bottom: clamp(1.5rem, 6vw, 3rem);
+  margin-bottom: 3rem;
+  /* border-bottom: 2px solid #222; */
 }
-
-.start-screen h3 {
-  font-size: clamp(1.2rem, 5vw, 1.5rem);
+.start-screen h3{
+  font-size: 1.2rem;
   color: #ffffff;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .start-screen p {
   color: rgb(255, 255, 255);
-  font-size: clamp(0.9rem, 4vw, 1.1rem);
-  margin: 0.4rem 0;
+  background: image(u);
+  font-size: 1.1rem;
+  margin: 0.40rem 0;
 }
-
 .start-button {
   flex: 1 1 45%;
-  min-width: 180px;
-  max-width: 220px;
+  min-width: 203px;
   text-align: center;
   background-color: #5a4631;
   border: 2px solid #ffffff;
   border-radius: 12px;
   padding: 0.7rem 1.2rem;
-  font-size: clamp(0.9rem, 3.5vw, 1.05rem);
+  font-size: 1.05rem;
   font-weight: 700;
   color: #ffffff;
   cursor: pointer;
@@ -131,33 +132,46 @@ body {
   text-align: center;
   margin: 1rem 0;
   line-height: 1.5;
-  width: 100%;
 }
 
 .instructions ul {
   padding-left: 0.5rem;
-  list-style-type: none;
 }
 
 .instructions li {
-  margin-bottom: 0.5rem;
-  font-size: clamp(1rem, 4vw, 1.4rem);
+  margin-bottom: 0.50rem;
+  font-size: 1.4rem;
   color: #eee;
   animation: fadeInUp 0.4s ease forwards;
   opacity: 0;
 }
 
-.instructions li:nth-child(1) { animation-delay: 0.2s; }
-.instructions li:nth-child(2) { animation-delay: 0.4s; }
-.instructions li:nth-child(3) { animation-delay: 0.6s; }
-.instructions li:nth-child(4) { animation-delay: 0.8s; }
-.instructions li:nth-child(5) { animation-delay: 1s; }
+.instructions li:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.instructions li:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.instructions li:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.instructions li:nth-child(4) {
+  animation-delay: 0.8s;
+}
+
+.instructions li:nth-child(5) {
+  animation-delay: 1s;
+}
 
 @keyframes fadeInUp {
   from {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -168,12 +182,13 @@ body {
 .button-85 {
   margin-top: 1.5rem;
   background-color: #5a4631;
-  border: 3px solid #ffffff;
+  border-color: #eee;
   border-radius: 15px;
-  padding: clamp(0.5rem, 2vw, 0.75rem) clamp(1.5rem, 5vw, 2rem);
+  padding: 0.75rem 2rem;
   font-weight: 700;
-  font-size: clamp(1rem, 4vw, 1.25rem);
+  font-size: 1.25rem;
   color: #eee;
+  border: 3px solid #ffffff;
   cursor: pointer;
   transition: all 0.3s ease;
   user-select: none;
@@ -195,19 +210,18 @@ body {
   max-width: 380px;
   background: url('./assets/images/bg26.jpg') no-repeat center center;
   background-size: cover;
-  padding: clamp(1rem, 5vw, 30px) clamp(1rem, 4vw, 25px) clamp(1.5rem, 6vw, 40px);
+  padding: 30px 25px 40px;
   text-align: center;
   position: relative;
   user-select: none;
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
 }
 
 .headline-title {
   font-family: "Georgia", serif;
   font-weight: 700;
-  font-size: clamp(2.5rem, 10vw, 3.6rem);
+  font-size: 3.6rem;
   text-align: center;
   margin-bottom: 0;
   letter-spacing: 0.1rem;
@@ -218,7 +232,7 @@ body {
   display: flex;
   justify-content: space-between;
   font-family: poppins, sans-serif;
-  font-size: clamp(0.85rem, 3vw, 0.95rem);
+  font-size: 0.95rem;
   font-weight: 500;
   border-bottom: 2px solid #222;
   padding-bottom: 0.5rem;
@@ -229,15 +243,14 @@ body {
 
 .info-bar {
   display: flex;
-  justify-content: space-between;
-  gap: clamp(0.5rem, 2vw, 1rem);
+   justify-content: space-between;
+  gap: 1rem;
   font-weight: 600;
-  font-size: clamp(0.9rem, 4vw, 1.4rem);
+  font-size: 1.4rem;
   margin-bottom: 0.5rem;
   user-select: none;
   align-items: center;
   border-bottom: 1px solid #222;
-  flex-wrap: wrap;
 }
 
 /* Content layout */
@@ -245,10 +258,9 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: clamp(0.5rem, 2vw, 1rem);
+  gap: 1rem;
   border-radius: 15px;
-  padding: clamp(1rem, 4vw, 2rem);
-  width: 100%;
+  padding: 2rem;
 }
 
 /* News Image */
@@ -258,14 +270,14 @@ body {
   height: auto;
   object-fit: cover;
   user-select: none;
-  margin-top: -10px;
+  margin-top: -10px; /* adjust value as needed */
 }
 
 /* Headline Box */
 .headline-box {
   max-width: 490px;
   width: 100%;
-  background: #f5e7cc;
+ background: #f5e7cc;
   display: flex;
   flex-direction: column;
   user-select: none;
@@ -279,7 +291,7 @@ body {
   border-radius: 8px;
   font-family: Rozha, serif;
   font-weight: 700;
-  font-size: clamp(1.2rem, 5vw, 1.5rem);
+  font-size: 1.5rem;
   color: rgb(0, 0, 0);
   user-select: text;
   line-height: 1.4;
@@ -297,7 +309,6 @@ body {
   color: #28a745;
   font-weight: 900;
 }
-
 /* Options */
 .options {
   color: #ffffff;
@@ -305,32 +316,29 @@ body {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  gap: clamp(0.8rem, 3vw, 1.6rem);
+  gap: 1.6rem;
   margin-bottom: 1rem;
   justify-content: center;
 }
 
 .option-btn {
   flex: 1 1 45%;
-  min-width: 110px;
-  max-width: calc(50% - 0.8rem);
+  min-width: 113px;
   text-align: center;
   background-color: #5a4631;
   border: 2px solid #ffffff;
   border-radius: 12px;
-  padding: clamp(0.5rem, 2vw, 0.7rem) clamp(0.6rem, 3vw, 1.2rem);
-  font-size: clamp(0.8rem, 3.5vw, 1.05rem);
+  padding: 0.7rem 1.2rem;
+  font-size: 1.05rem;
   font-weight: 700;
   color: #ffffff;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
   user-select: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: auto;
-  word-break: break-word;
+ 
 }
+
+/* Unskew the inner text */
 
 .option-btn:hover:not(:disabled) {
   background-color: #000000;
@@ -361,7 +369,7 @@ body {
 /* Info text and Read More */
 .info-text {
   margin-top: 1rem;
-  font-size: clamp(0.9rem, 3.5vw, 1rem);
+  font-size: 1rem;
   font-style: italic;
   user-select: text;
 }
@@ -381,23 +389,25 @@ body {
 .nav-buttons {
   margin-top: 1.5rem;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  margin-left: -3.4rem;
   align-items: center;
-  width: 100%;
 }
 
 .nav-buttons button {
   background-color: #5a4631;
   border: 3px solid #ffffff;
   border-radius: 15px;
-  padding: clamp(0.5rem, 2vw, 0.7rem) clamp(1rem, 4vw, 1.6rem);
+  padding: 0.7rem 1.6rem;
   font-weight: 700;
-  font-size: clamp(0.9rem, 3.5vw, 1.1rem);
+  font-size: 1.1rem;
   color: #eee;
   cursor: pointer;
   transition: all 0.3s ease;
   user-select: none;
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  margin-left: 8.5rem; 
 }
 
 .nav-buttons button:disabled {
@@ -421,7 +431,7 @@ body {
   justify-content: space-between;
   margin-bottom: 0.8rem;
   font-weight: 700;
-  font-size: clamp(0.9rem, 3.5vw, 1.15rem);
+  font-size: 1.15rem;
   user-select: none;
 }
 
@@ -429,8 +439,8 @@ body {
 .game-over-screen {
   width: 100%;
   max-width: 600px;
-  margin: 0 auto;
-  padding: clamp(1rem, 5vw, 2rem);
+  margin: 2rem auto;
+  padding: 2rem;
   text-align: center;
   background-image: url('./assets/images/bg11.jpg');
   background-size: cover;
@@ -441,7 +451,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 90vh;
+  min-height: 95vh;
   backdrop-filter: blur(3px);
   animation: fadeScaleIn 0.8s ease forwards;
   transform: scale(0.9);
@@ -452,7 +462,7 @@ body {
 .game-over-box {
   width: 100%;
   max-width: 500px;
-  padding: clamp(1rem, 5vw, 2rem);
+  padding: 2rem;
   background-image: url('./assets/images/box.png');
   background-size: cover;
   background-repeat: no-repeat;
@@ -468,15 +478,21 @@ body {
 }
 
 .game-over-text {
-  font-size: clamp(1.6rem, 6vw, 2.2rem);
+  font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 1rem;
   color: #ffffff;
 }
 
 .final-score {
-  font-size: clamp(1rem, 4vw, 1.2rem);
+  font-size: 1.2rem;
+  color: #333;
   color: #ffffff;
+}
+
+
+.button-85:hover {
+  background-color: #060606;
 }
 
 /* Animation */
@@ -489,12 +505,13 @@ body {
 
 /* Content Box */
 .content-box {
-  background-size: cover;
+  background-size: cover; /* Use cover for content-box as well */
   max-width: 700px;
   width: 100%;
   user-select: none;
   margin: 1rem auto;
   transition: background 0.3s ease, border-color 0.3s ease;
+  margin-top: 1rem;
 }
 
 .image-frame {
@@ -509,82 +526,211 @@ body {
 }
 
 .image-frame img {
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: auto;
   object-fit: cover;
   pointer-events: none;
   user-select: none;
 }
 
-/* Media queries for different screen sizes */
-@media (max-width: 480px) {
-  .start-screen, 
-  .container, 
-  .game-over-screen {
-    max-width: 95%;
+
+
+
+
+
+
+
+
+/* === Mobile Responsive Adjustments === */
+
+
+@media (max-width: 450px) {
+  .start-screen {
+    background-image: url('./assets/images/bg11.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    max-width: 335px;
+    margin: 1rem auto;
     padding: 1rem;
   }
-  
-  .headline-text {
-    margin-left: -1rem;
-    width: 110%;
-  }
-  
-  .options {
-    max-width: 100%;
-  }
-  
-  .option-btn {
-    padding: 0.5rem 0.6rem;
-  }
-}
 
-@media (max-width: 375px) {
-  .start-screen,
-  .container,
-  .game-over-screen {
-    padding: 0.7rem;
-    margin: 0.3rem auto;
-    min-height: 85vh;
+  .start-screen h1 {
+    font-size: 1.8rem;
   }
-  
-  .headline-title {
-    font-size: clamp(1.8rem, 8vw, 2.5rem);
-  }
-  
-  .headline-text {
-    margin-left: -0.5rem;
-    width: 105%;
-  }
-  
-  .options {
-    gap: 0.6rem;
-  }
-  
-  .option-btn {
-    min-width: 100px;
-    padding: 0.4rem 0.5rem;
-  }
-  
-  .nav-buttons button {
-    padding: 0.4rem 0.8rem;
-  }
-}
 
-/* For very small screens */
-@media (max-width: 320px) {
-  .headline-text {
-    margin-left: 0;
+  .start-screen p {
+    font-size: 0.9rem;
+  }
+
+  .instructions li {
+    font-size: 0.9rem;
+  }
+
+  .container {
+    padding: 1rem;
     width: 100%;
+    max-width: 350px;
+    background-image: url('./assets/images/bg27.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
   }
-  
+
+  .headline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-size: 0.85rem;
+    padding-bottom: 0.4rem;
+    margin-bottom: 0.8rem;
+    border-bottom: 2px solid #000;
+  }
+
+  .headline-title {
+    font-size: 2.7rem;
+  }
+
+  .info-bar {
+    font-size: 0.9rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .info-bar > div {
+    flex: 1 1 45%;
+    min-width: 200px;
+  }
+
+  .headline-text {
+    font-size: 1.2rem;
+  }
+
+
   .options {
-    gap: 0.4rem;
-  }
-  
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  justify-content: center;
+}
   .option-btn {
-    min-width: 90px;
-    padding: 0.3rem 0.4rem;
-    font-size: 0.8rem;
+  background-color: #5a4631;
+  text-align: center;
+  flex: 1 1 45%;
+  padding: 0.5rem 0.8rem;
+  font-size: 0.9rem;
+  max-width: 100%;
+  box-sizing: border-box;
+  display: flex;               
+  justify-content: center;     
+  align-items: center;        
+  white-space: normal;         
+}
+
+  .nav-buttons button {
+  background-color: #5a4631;
+  border: 3px solid #ffffff;
+  border-radius: 15px;
+  padding: 0.7rem 1.6rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #eee;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  user-select: none;
+  display: flex;
+  justify-content: center;
+  margin-left: 7.5rem; /* add space from the content above if needed */
   }
+
+  .status-bar {
+    font-size: 0.9rem;
+  }
+
+  .game-over h2 {
+    font-size: 1.8rem;
+  }
+
+  .game-over-screen {
+  background-image: url('./assets/images/bg27.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  max-width: 325px; /* Match start-screen */
+  margin: 1rem auto;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+.game-over-box {
+  width: 100%;
+  max-width: 450px;
+  padding: 2rem;
+  background-image: url('./assets/images/box.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  animation: fadeScaleIn 0.8s ease forwards;
+  transform: scale(0.9);
+  opacity: 0;
+}
+.game-over-text {
+  font-size: 2.0rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+  .game-over p {
+    font-size: 1rem;
+  }
+
+  .button-85 {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* ✅ OUTSIDE media query — main .options layout */
+
+.options {
+  background: image(url('./assets/images/b1.png'));
+  background-size: cover;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.2rem;
+  max-width: 480px;
+  margin: 0 auto 1rem;
+}
+
+.option-btn {
+  flex: 0 0 calc(50% - 1rem); /* force two per row */
+  box-sizing: border-box;
+  text-align: center;
+  background: image(url('./assets/images/b1.png'));
+  background-size: cover;
+  background-color: #5a4631;
+  border: 2px solid #ffffff;
+  border-radius: 15px;
+  padding: 0.7rem 1.2rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.game-over-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
