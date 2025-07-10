@@ -1,5 +1,3 @@
-
-
 /* Global resets */
 * {
   box-sizing: border-box;
@@ -49,6 +47,7 @@ body {
 
 /* Start Screen */
 .start-screen {
+  width: 100%;
   height: 70vh;
   max-width: 350px;
   margin: 3rem auto;
@@ -58,7 +57,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  color: rgb(0, 0, 0);
+  /* color: rgb(0, 0, 0); */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -70,6 +69,10 @@ body {
   animation: fadeScaleIn 0.8s ease forwards;
   transform: scale(0.9);
   opacity: 0;
+  position: relative;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
 }
 
 
@@ -100,7 +103,7 @@ body {
   /* border-bottom: 2px solid #222; */
 }
 .start-screen h3{
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   color: #ffffff;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
@@ -140,7 +143,7 @@ body {
 
 .instructions li {
   margin-bottom: 0.50rem;
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   color: #eee;
   animation: fadeInUp 0.4s ease forwards;
   opacity: 0;
@@ -206,6 +209,7 @@ body {
 
 /* Container */
 .container {
+  border: #000 solid 1px;
   width: 100%;
   max-width: 380px;
   background: url('./assets/images/bg26.jpg') no-repeat center center;
@@ -337,9 +341,7 @@ body {
   user-select: none;
  
 }
-
 /* Unskew the inner text */
-
 .option-btn:hover:not(:disabled) {
   background-color: #000000;
 }
@@ -437,12 +439,12 @@ body {
 
 /* Game Over Screen */
 .game-over-screen {
-  width: 100%;
-  max-width: 600px;
-  margin: 2rem auto;
-  padding: 2rem;
+  height: 70vh;
+  max-width: 350px;
+  margin: 3rem auto;
   text-align: center;
-  background-image: url('./assets/images/bg11.jpg');
+  padding: 2rem;
+  background-image: url('./assets/images/bg30.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -490,7 +492,6 @@ body {
   color: #ffffff;
 }
 
-
 .button-85:hover {
   background-color: #060606;
 }
@@ -502,7 +503,6 @@ body {
     opacity: 1;
   }
 }
-
 /* Content Box */
 .content-box {
   background-size: cover; /* Use cover for content-box as well */
@@ -533,37 +533,51 @@ body {
   user-select: none;
 }
 
-
-
-
-
-
-
-
-
 /* === Mobile Responsive Adjustments === */
-
-
 @media (max-width: 450px) {
   .start-screen {
-    background-image: url('./assets/images/bg11.jpg');
+    background-image: url('./assets/images/bg26.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     width: 100%;
-    max-width: 335px;
+    max-width: 325px;
     margin: 1rem auto;
     padding: 1rem;
   }
 
   .start-screen h1 {
-    font-size: 1.8rem;
+    font-size: 2.7rem;
   }
 
   .start-screen p {
     font-size: 0.9rem;
   }
-
+   .start-box {
+  width: 100%;
+  max-width: 450px;
+  padding: 1.2rem;
+  background-image: url('./assets/images/box.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  animation: fadeScaleIn 0.8s ease forwards;
+  transform: scale(0.9);
+  opacity: 0;
+  }
+.start-button {
+    min-width: 260px;
+    padding: 1rem 2rem;
+    font-size: 1.4rem;
+    border-radius: 16px;
+    margin-top: 1.5rem;
+    transform: skew(-20deg); /* keep consistent with desktop */
+  }
   .instructions li {
     font-size: 0.9rem;
   }
@@ -578,7 +592,6 @@ body {
     background-repeat: no-repeat;
     
   }
-
   .headline-header {
     display: flex;
     justify-content: space-between;
@@ -608,8 +621,6 @@ body {
   .headline-text {
     font-size: 1.2rem;
   }
-
-
   .options {
   display: flex;
   flex-wrap: wrap;
@@ -660,9 +671,9 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   width: 100%;
-  max-width: 325px; /* Match start-screen */
+  max-width: 320px; /* Match start-screen */
   margin: 1rem auto;
-  padding: 1rem;
+  padding: 1.9rem;
   box-sizing: border-box;
 }
 .game-over-box {
@@ -683,7 +694,7 @@ body {
   opacity: 0;
 }
 .game-over-text {
-  font-size: 2.0rem;
+  font-size: 2.6rem;
   font-weight: bold;
   margin-bottom: 1rem;
   color: #ffffff;
@@ -693,13 +704,26 @@ body {
   }
 
   .button-85 {
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
+  margin-top: 1.5rem;
+  background-color: #5a4631;
+  border-color: #eee;
+  border-radius: 15px;
+  padding: 0.5rem 1rem;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #eee;
+  border: 3px solid #ffffff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  user-select: none;
+
+  /* ✅ Add these */
+  min-width: 140px;    /* or 250px if you want more length */
+  text-align: center;
   }
 }
 
 /* ✅ OUTSIDE media query — main .options layout */
-
 .options {
   background: image(url('./assets/images/b1.png'));
   background-size: cover;
@@ -726,11 +750,4 @@ body {
   color: #fff;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.game-over-screen {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }

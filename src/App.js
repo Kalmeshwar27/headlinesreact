@@ -142,9 +142,7 @@ function App() {
           <h3>Instructions</h3>
           <div className="instructions">
             <ul>
-              <li>
-                Complete the Headline with the right word based on recent news.
-              </li>
+              <li>Complete the Headline with the right word based on recent news.</li>
               <li>You have 20 seconds for each question.</li>
             </ul>
           </div>
@@ -160,7 +158,7 @@ function App() {
     return (
       <div className="game-over-screen">
         <div className="game-over-box">
-          <h1 className="game-over-text"> Game Over </h1>
+          <h1 className="game-over-text"> 🎉 Game Over </h1>
           <p className="final-score">
             You scored: {score} / {questions.length}
           </p>
@@ -184,7 +182,14 @@ function App() {
         <h3 className="headline-title">The Headlines</h3>
         <div className="headline-header">
           <div>Business</div>
-          <div>May 2025</div>
+          <div>
+  {new Date().toLocaleDateString('en-GB', {
+    day: '2-digit',
+    month: 'numeric',
+    year: 'numeric',
+  }).replace(/ /g, '-')}
+</div>
+
         </div>
         <div className="info-bar">
           <span>Score: {score}</span>
