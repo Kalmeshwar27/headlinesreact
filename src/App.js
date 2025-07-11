@@ -4,7 +4,7 @@ import startSound from "./assets/sounds/start.mp3";
 import correctSound from "./assets/sounds/correct.mp3";
 import wrongSound from "./assets/sounds/wrong.mp3";
 import gameOverSound from "./assets/sounds/game-over-sound.mp3";
-import questionsData from './questions.json';
+
 
 const startAudio = new Audio(startSound);
 const correctAudio = new Audio(correctSound);
@@ -23,16 +23,23 @@ function App() {
   const [gameOver, setGameOver] = useState(false);
   const [isFlipping, setIsFlipping] = useState(false);
  
-
- useEffect(() => {
-  const processed = questionsData.data.map((q) => ({
-    ...q,
-    attempted: false,
-    correct: false,
-  }));
-  setQuestions(processed);
-  setLoading(false);
-}, []);
+   useEffect(() => {
+    fetch('/questions.json')
+      .then((res) => res.json())
+      .then((data) => {
+        const processed = data.data.map((q) => ({
+          ...q,
+          attempted: false,
+          correct: false,
+        }));
+        setQuestions(processed);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("Error loading questions:", err);
+        setLoading(false);
+      });
+  }, []);
 
   useEffect(() => {
     if (submitted || gameOver || !started || questions.length === 0) return;
@@ -169,12 +176,28 @@ function App() {
       </div>
     );
   }
+const current = questions[currentQ];
 
-  const current = questions[currentQ];
-  const filledSentence = current.sentence.replace(
-    /<span id="blank">.*?<\/span>/,
+let displaySentence;
+
+if (submitted || current.attempted) {
+  // After submit: show correct answer in the blank
+  displaySentence = current.sentence.replace(
+    /_{2,}/g,
     `<span id="blank" class="correct">${current.correctAnswer}</span>`
   );
+} else if (selected) {
+  // Before submit: show selected answer in the blank
+  displaySentence = current.sentence.replace(
+    /_{2,}/g,
+    `<span id="blank" class="user-selected">${selected}</span>`
+  );
+} else {
+  // Default: keep blank
+  displaySentence = current.sentence;
+}
+
+
 
   return (
     <div className="container">
@@ -205,12 +228,8 @@ function App() {
             <div className="headline-box">
               <p
                 className="headline-text"
-                dangerouslySetInnerHTML={{
-                  __html:
-                    submitted || current.attempted
-                      ? filledSentence
-                      : current.sentence,
-                }}
+                dangerouslySetInnerHTML={{ __html: displaySentence }}
+
               />
 
               <div className="options">
