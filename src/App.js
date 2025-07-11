@@ -6,6 +6,7 @@ import wrongSound from "./assets/sounds/wrong.mp3";
 import gameOverSound from "./assets/sounds/game-over-sound.mp3";
 
 
+
 const startAudio = new Audio(startSound);
 const correctAudio = new Audio(correctSound);
 const wrongAudio = new Audio(wrongSound);

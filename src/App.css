@@ -51,7 +51,6 @@ body {
 
 /* Start Screen */
 .start-screen {
-  border: #000 solid 1px;
   width: 100%;
   height: 70vh;
   max-width: 350px;
@@ -444,7 +443,7 @@ body {
 
 /* Game Over Screen */
 .game-over-screen {
-  border: #000 solid 1px;
+
   height: 70vh;
   max-width: 350px;
   margin: 3rem auto;
@@ -542,7 +541,7 @@ body {
 /* === Mobile Responsive Adjustments === */
 @media (max-width: 450px) {
   .start-screen {
-    background-image: url('./assets/images/bg30.jpg');
+    background-image: url('./assets/images/bg11.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -592,7 +591,7 @@ body {
     padding: 1rem;
     width: 100%;
     max-width: 350px;
-    background-image: url('./assets/images/bg27.jpg');
+    background-image: url('./assets/images/bg11.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -672,7 +671,7 @@ body {
   }
 
   .game-over-screen {
-  background-image: url('./assets/images/bg30.jpg');
+  background-image: url('./assets/images/bg11.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
