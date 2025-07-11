@@ -541,7 +541,7 @@ body {
 /* === Mobile Responsive Adjustments === */
 @media (max-width: 450px) {
   .start-screen {
-    background-image: url('./assets/images/bg11.jpg');
+    background-image: url('./assets/images/bg27.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -671,7 +671,7 @@ body {
   }
 
   .game-over-screen {
-  background-image: url('./assets/images/bg11.jpg');
+  background-image: url('./assets/images/bg27.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
