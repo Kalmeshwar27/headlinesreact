@@ -1,17 +1,17 @@
 {
   "data": [
     {
-      "image": "https://ppp-assets.s3.ap-south-1.amazonaws.com/trump_speech1_99f8154f26.jpg",
-      "sentence": "Trump says putin has \"gone absolutely __ \"",
-      "correctAnswer": "Crazy",
+      "image": "https://ppp-assets.s3.ap-south-1.amazonaws.com/arwind3.jpg",
+      "sentence": "Kejriwal Says He Should Get ___ For Governance",
+      "correctAnswer": "Nobel Prize",
       "options": [
-        "Viral",
-        "Sane",
-        "Crazy",
-        "Insane"
+        "Padma Bhushan",
+        "Rashtriya Puraskar",
+        "Nobel Prize",
+        "Bharat Ratna"
       ],
-      "info": "Trump's reaction came after Russia's largest aerial attack on Ukraine.",
-      "readMore": "https://www.hindustantimes.com/world-news/us-news/trump-says-putin-has-gone-absolutely-crazy-considering-more-sanctions-on-russia-101748243693554.html",
+      "info": "I should get a Nobel Prize for governance and administration for doing so much despite there being a lieutenant governor and various difficulties,\" the former Delhi CM said recently.",
+      "readMore": "https://www.news18.com/politics/kejriwal-says-he-should-get-nobel-prize-for-governance-bjp-reminds-of-scams-in-delhi-ws-l-9430946.html",
       "attempted": false,
       "correct": false
     }
