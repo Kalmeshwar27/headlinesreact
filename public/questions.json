@@ -2,16 +2,16 @@
   "data": [
     {
       "image": "https://ppp-assets.s3.ap-south-1.amazonaws.com/arwind3.jpg",
-      "sentence": "Kejriwal says he should get ___ for governance.",
-      "correctAnswer": "Nobel Prize",
+      "sentence": "Donald Trump has sued Wall Street Journal for __ over a story linking him to Jeffrey Epstein.",
+      "correctAnswer": "$10 billion",
       "options": [
-        "Padma Bhushan",
-        "Rashtriya Puraskar",
-        "Nobel Prize",
-        "Bharat Ratna"
+        "$100 million",
+        "$10 billion",
+        "$10 million",
+        "$1 billion"
       ],
-      "info": "I should get a Nobel Prize for governance and administration for doing so much despite there being a lieutenant governor and various difficulties,\" the former Delhi CM said recently.",
-      "readMore": "https://www.news18.com/politics/kejriwal-says-he-should-get-nobel-prize-for-governance-bjp-reminds-of-scams-in-delhi-ws-l-9430946.html",
+      "info": "Donald Trump has sued WSJ for $10 billion for an article about an alleged letter he sent to sex offender Epstein.",
+      "readMore": "https://www.inquisitr.com/trump-slaps-wsj-with-10-billion-lawsuit-over-creepy-epstein-letter-claim-says-his-reputation-isnt-cheap",
       "attempted": false,
       "correct": false
     }
