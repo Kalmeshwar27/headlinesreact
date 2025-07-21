@@ -150,7 +150,8 @@ function App() {
           <h3>Instructions</h3>
           <div className="instructions">
             <ul>
-              <li>Complete the Headline with the right word based on recent news.</li>
+              <li>Complete the Headline with the 
+                   right word based on recent news.</li>
               <li>You have 20 seconds for each question.</li>
             </ul>
           </div>
