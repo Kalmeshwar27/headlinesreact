@@ -114,7 +114,7 @@ body {
 .start-screen p {
   color: rgb(255, 255, 255);
   background: image(u);
-  font-size: 1.1rem;
+  font-size: 1.0rem;
   margin: 0.40rem 0;
 }
 .start-button {
